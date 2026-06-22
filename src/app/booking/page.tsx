@@ -26,6 +26,8 @@ export default function BookingPage() {
     agreeTerms: false,
   });
   const [paymentMethod, setPaymentMethod] = useState<string>("");
+  const [idFile, setIdFile] = useState<File | null>(null);
+  const [receiptFile, setReceiptFile] = useState<File | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -55,6 +57,12 @@ export default function BookingPage() {
         formPayload.append("Purpose", formData.purpose || "Not specified");
         formPayload.append("ID Type", formData.idType);
         formPayload.append("Payment Method", paymentMethod);
+        if (idFile) {
+          formPayload.append("ID Photo", idFile);
+        }
+        if (receiptFile) {
+          formPayload.append("Payment Receipt", receiptFile);
+        }
 
         await fetch("https://api.web3forms.com/submit", {
           method: "POST",
@@ -319,6 +327,33 @@ export default function BookingPage() {
                   </select>
                 </div>
 
+                <div>
+                  <label htmlFor="booking-id-file" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Upload ID Photo *
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      id="booking-id-file"
+                      required
+                      accept="image/*,.pdf"
+                      onChange={(e) => setIdFile(e.target.files?.[0] || null)}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#C5A044] focus:ring-1 focus:ring-[#C5A044] outline-none transition-colors text-sm file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-medium file:bg-[#C5A044]/10 file:text-[#C5A044] hover:file:bg-[#C5A044]/20"
+                    />
+                  </div>
+                  {idFile && (
+                    <p className="mt-1.5 text-xs text-green-600 flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {idFile.name}
+                    </p>
+                  )}
+                  <p className="mt-1 text-xs text-gray-400">
+                    Accepted formats: JPG, PNG, PDF (max 5MB)
+                  </p>
+                </div>
+
                 <div className="flex items-start gap-3 pt-2">
                   <input
                     type="checkbox"
@@ -461,8 +496,8 @@ export default function BookingPage() {
 
                 <div className="bg-[#C5A044]/5 rounded-xl p-4 border border-[#C5A044]/20">
                   <p className="text-sm text-gray-600 text-center">
-                    After payment, please send your proof of payment (screenshot)
-                    to our Instagram{" "}
+                    After payment, please upload your proof of payment below
+                    and send a screenshot to our Instagram{" "}
                     <a
                       href="https://instagram.com/holyshots"
                       target="_blank"
@@ -471,7 +506,35 @@ export default function BookingPage() {
                     >
                       @holyshots
                     </a>{" "}
-                    for confirmation.
+                    for faster confirmation.
+                  </p>
+                </div>
+
+                {/* Payment Receipt Upload */}
+                <div>
+                  <label htmlFor="receipt-file" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Upload Payment Receipt / Screenshot *
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      id="receipt-file"
+                      required
+                      accept="image/*,.pdf"
+                      onChange={(e) => setReceiptFile(e.target.files?.[0] || null)}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#C5A044] focus:ring-1 focus:ring-[#C5A044] outline-none transition-colors text-sm file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-medium file:bg-[#C5A044]/10 file:text-[#C5A044] hover:file:bg-[#C5A044]/20"
+                    />
+                  </div>
+                  {receiptFile && (
+                    <p className="mt-1.5 text-xs text-green-600 flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {receiptFile.name}
+                    </p>
+                  )}
+                  <p className="mt-1 text-xs text-gray-400">
+                    Upload a screenshot of your payment confirmation (JPG, PNG, PDF)
                   </p>
                 </div>
 
