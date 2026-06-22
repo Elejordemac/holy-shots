@@ -5,6 +5,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const WEB3FORMS_KEY = "761d712e-4187-40f6-bd4f-0d900f022c94";
+
 const equipment = [
   { id: "canon-g7x-iii", name: "Canon G7X Mark III", dailyRate: 600, weekdayRate: 800 },
 ];
@@ -25,15 +27,51 @@ export default function BookingPage() {
   });
   const [paymentMethod, setPaymentMethod] = useState<string>("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (step === 1) {
       setStep(2);
     } else if (step === 2) {
       setStep(3);
     } else {
-      setSubmitted(true);
+      // Submit to Web3Forms
+      setSubmitting(true);
+      try {
+        const selectedEquipment = equipment.find((eq) => eq.id === formData.equipment);
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            subject: `New Booking: ${formData.name} — ${selectedEquipment?.name}`,
+            from_name: "Holy Shots Website",
+            // Customer details
+            "Full Name": formData.name,
+            "Email": formData.email,
+            "Phone": formData.phone,
+            "Instagram": formData.instagram,
+            "Equipment": selectedEquipment?.name,
+            "Pickup Date": formData.startDate,
+            "Return Date": formData.endDate,
+            "Purpose": formData.purpose || "Not specified",
+            "ID Type": formData.idType,
+            "Payment Method": paymentMethod,
+            "Agreed to Terms": "Yes",
+          }),
+        });
+        const result = await response.json();
+        if (result.success) {
+          setSubmitted(true);
+        } else {
+          alert("Something went wrong. Please DM us on Instagram instead.");
+        }
+      } catch {
+        alert("Network error. Please DM us on Instagram instead.");
+      } finally {
+        setSubmitting(false);
+      }
     }
   };
 
@@ -451,9 +489,10 @@ export default function BookingPage() {
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-8 py-3.5 bg-[#C5A044] text-white font-medium rounded-full hover:bg-[#A6852E] transition-colors"
+                    disabled={submitting}
+                    className="flex-1 px-8 py-3.5 bg-[#C5A044] text-white font-medium rounded-full hover:bg-[#A6852E] transition-colors disabled:opacity-50"
                   >
-                    I&apos;ve Completed Payment
+                    {submitting ? "Submitting..." : "I've Completed Payment"}
                   </button>
                 </div>
               </div>

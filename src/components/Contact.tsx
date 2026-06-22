@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+const WEB3FORMS_KEY = "761d712e-4187-40f6-bd4f-0d900f022c94";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,13 +11,35 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would send to a backend or email service
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: "", email: "", message: "" });
+    setSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New Inquiry from ${formData.name}`,
+          from_name: "Holy Shots Website",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 3000);
+        setFormData({ name: "", email: "", message: "" });
+      }
+    } catch {
+      alert("Something went wrong. Please DM us on Instagram instead.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -145,9 +169,10 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full px-8 py-3.5 bg-[#C5A044] text-white font-medium rounded-full hover:bg-[#A6852E] transition-colors"
+                disabled={submitting}
+                className="w-full px-8 py-3.5 bg-[#C5A044] text-white font-medium rounded-full hover:bg-[#A6852E] transition-colors disabled:opacity-50"
               >
-                {submitted ? "Message Sent! ✓" : "Send Message"}
+                {submitted ? "Message Sent! ✓" : submitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
