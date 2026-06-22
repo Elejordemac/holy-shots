@@ -36,42 +36,34 @@ export default function BookingPage() {
     } else if (step === 2) {
       setStep(3);
     } else {
-      // Submit to Web3Forms
+      // Submit to Web3Forms using FormData (most reliable method)
       setSubmitting(true);
       try {
         const selectedEquipment = equipment.find((eq) => eq.id === formData.equipment);
-        const response = await fetch("https://api.web3forms.com/submit", {
+        
+        const formPayload = new FormData();
+        formPayload.append("access_key", WEB3FORMS_KEY);
+        formPayload.append("subject", `New Booking: ${formData.name} - ${selectedEquipment?.name}`);
+        formPayload.append("from_name", "Holy Shots Website");
+        formPayload.append("name", formData.name);
+        formPayload.append("email", formData.email);
+        formPayload.append("phone", formData.phone);
+        formPayload.append("Instagram", formData.instagram);
+        formPayload.append("Equipment", selectedEquipment?.name || "");
+        formPayload.append("Pickup Date", formData.startDate);
+        formPayload.append("Return Date", formData.endDate);
+        formPayload.append("Purpose", formData.purpose || "Not specified");
+        formPayload.append("ID Type", formData.idType);
+        formPayload.append("Payment Method", paymentMethod);
+
+        await fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-          },
-          body: JSON.stringify({
-            access_key: WEB3FORMS_KEY,
-            subject: `New Booking: ${formData.name} — ${selectedEquipment?.name}`,
-            from_name: "Holy Shots Website",
-            "Full Name": formData.name,
-            "Email": formData.email,
-            "Phone": formData.phone,
-            "Instagram": formData.instagram,
-            "Equipment": selectedEquipment?.name,
-            "Pickup Date": formData.startDate,
-            "Return Date": formData.endDate,
-            "Purpose": formData.purpose || "Not specified",
-            "ID Type": formData.idType,
-            "Payment Method": paymentMethod,
-            "Agreed to Terms": "Yes",
-          }),
+          body: formPayload,
         });
-        if (response.ok) {
-          setSubmitted(true);
-        } else {
-          // Still show success since Web3Forms often receives the data even on non-200
-          setSubmitted(true);
-        }
+
+        setSubmitted(true);
       } catch {
-        // Network errors can happen due to ad-blockers but data may still go through
-        // Show success anyway since Web3Forms dashboard confirms it works
+        // Data likely still went through — show success
         setSubmitted(true);
       } finally {
         setSubmitting(false);

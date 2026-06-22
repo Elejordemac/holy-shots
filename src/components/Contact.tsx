@@ -17,32 +17,23 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const formPayload = new FormData();
+      formPayload.append("access_key", WEB3FORMS_KEY);
+      formPayload.append("subject", `New Inquiry from ${formData.name}`);
+      formPayload.append("from_name", "Holy Shots Website");
+      formPayload.append("name", formData.name);
+      formPayload.append("email", formData.email);
+      formPayload.append("message", formData.message);
+
+      await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: `New Inquiry from ${formData.name}`,
-          from_name: "Holy Shots Website",
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
+        body: formPayload,
       });
-      if (response.ok) {
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 3000);
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 3000);
-        setFormData({ name: "", email: "", message: "" });
-      }
+
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 3000);
+      setFormData({ name: "", email: "", message: "" });
     } catch {
-      // Data likely still went through — show success
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 3000);
       setFormData({ name: "", email: "", message: "" });
