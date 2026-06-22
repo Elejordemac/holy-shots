@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
-const WEB3FORMS_KEY = "761d712e-4187-40f6-bd4f-0d900f022c94";
+const EMAILJS_SERVICE_ID = "service_pfqc3iv";
+const EMAILJS_CONTACT_TEMPLATE_ID = "template_0a7oqs";
+const EMAILJS_PUBLIC_KEY = "vpDTwVtZMtxoj-JpX";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -17,18 +20,24 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      const formPayload = new FormData();
-      formPayload.append("access_key", WEB3FORMS_KEY);
-      formPayload.append("subject", `New Inquiry from ${formData.name}`);
-      formPayload.append("from_name", "Holy Shots Website");
-      formPayload.append("name", formData.name);
-      formPayload.append("email", formData.email);
-      formPayload.append("message", formData.message);
-
-      await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formPayload,
-      });
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_CONTACT_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          equipment: "N/A - Contact Inquiry",
+          phone: "N/A",
+          instagram: "N/A",
+          pickup_date: "N/A",
+          return_date: "N/A",
+          purpose: formData.message,
+          id_type: "N/A",
+          payment_method: "N/A",
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 3000);

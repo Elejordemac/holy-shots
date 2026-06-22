@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const WEB3FORMS_KEY = "761d712e-4187-40f6-bd4f-0d900f022c94";
+const EMAILJS_SERVICE_ID = "service_pfqc3iv";
+const EMAILJS_TEMPLATE_ID = "template_0a7oqs";
+const EMAILJS_PUBLIC_KEY = "vpDTwVtZMtxoj-JpX";
 
 const equipment = [
   { id: "canon-g7x-iii", name: "Canon G7X Mark III", dailyRate: 600, weekdayRate: 800 },
@@ -38,40 +41,36 @@ export default function BookingPage() {
     } else if (step === 2) {
       setStep(3);
     } else {
-      // Submit to Web3Forms using FormData (most reliable method)
+      // Submit via EmailJS
       setSubmitting(true);
       try {
         const selectedEquipment = equipment.find((eq) => eq.id === formData.equipment);
-        
-        const formPayload = new FormData();
-        formPayload.append("access_key", WEB3FORMS_KEY);
-        formPayload.append("subject", `New Booking: ${formData.name} - ${selectedEquipment?.name}`);
-        formPayload.append("from_name", "Holy Shots Website");
-        formPayload.append("name", formData.name);
-        formPayload.append("email", formData.email);
-        formPayload.append("phone", formData.phone);
-        formPayload.append("Instagram", formData.instagram);
-        formPayload.append("Equipment", selectedEquipment?.name || "");
-        formPayload.append("Pickup Date", formData.startDate);
-        formPayload.append("Return Date", formData.endDate);
-        formPayload.append("Purpose", formData.purpose || "Not specified");
-        formPayload.append("ID Type", formData.idType);
-        formPayload.append("Payment Method", paymentMethod);
-        if (idFile) {
-          formPayload.append("ID Photo", idFile);
-        }
-        if (receiptFile) {
-          formPayload.append("Payment Receipt", receiptFile);
-        }
 
-        await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          body: formPayload,
-        });
+        const templateParams: Record<string, unknown> = {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          instagram: formData.instagram,
+          equipment: selectedEquipment?.name || "",
+          pickup_date: formData.startDate,
+          return_date: formData.endDate,
+          purpose: formData.purpose || "Not specified",
+          id_type: formData.idType,
+          payment_method: paymentMethod,
+          id_photo: idFile || undefined,
+          receipt: receiptFile || undefined,
+        };
+
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          templateParams,
+          EMAILJS_PUBLIC_KEY
+        );
 
         setSubmitted(true);
       } catch {
-        // Data likely still went through — show success
+        // Show success anyway — customer can follow up on IG
         setSubmitted(true);
       } finally {
         setSubmitting(false);
