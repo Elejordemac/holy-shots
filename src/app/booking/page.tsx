@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const EMAILJS_SERVICE_ID = "service_pfqc3iv";
-const EMAILJS_TEMPLATE_ID = "template_0a7oqs";
+const EMAILJS_TEMPLATE_ID = "template_0a7oqqs";
 const EMAILJS_PUBLIC_KEY = "vpDTwVtZMtxoj-JpX";
 
 const equipment = [

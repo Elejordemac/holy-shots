@@ -4,7 +4,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const EMAILJS_SERVICE_ID = "service_pfqc3iv";
-const EMAILJS_CONTACT_TEMPLATE_ID = "template_0a7oqs";
+const EMAILJS_CONTACT_TEMPLATE_ID = "template_0a7oqqs";
 const EMAILJS_PUBLIC_KEY = "vpDTwVtZMtxoj-JpX";
 
 export default function Contact() {
