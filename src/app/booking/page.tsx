@@ -9,10 +9,27 @@ import Footer from "@/components/Footer";
 const EMAILJS_SERVICE_ID = "service_pfqc3iv";
 const EMAILJS_TEMPLATE_ID = "template_0a7oqqs";
 const EMAILJS_PUBLIC_KEY = "vpDTwVtZMtxoj-JpX";
+const IMGBB_API_KEY = "436e532dab77559315773ca2c64cd14d";
 
 const equipment = [
   { id: "canon-g7x-iii", name: "Canon G7X Mark III", dailyRate: 600, weekdayRate: 800 },
 ];
+
+async function uploadToImgBB(file: File): Promise<string> {
+  const formData = new FormData();
+  formData.append("image", file);
+  formData.append("key", IMGBB_API_KEY);
+
+  const response = await fetch("https://api.imgbb.com/1/upload", {
+    method: "POST",
+    body: formData,
+  });
+  const result = await response.json();
+  if (result.success) {
+    return result.data.url;
+  }
+  return "Upload failed";
+}
 
 export default function BookingPage() {
   const [step, setStep] = useState(1);
@@ -41,10 +58,21 @@ export default function BookingPage() {
     } else if (step === 2) {
       setStep(3);
     } else {
-      // Submit via EmailJS
+      // Submit via EmailJS with ImgBB image uploads
       setSubmitting(true);
       try {
         const selectedEquipment = equipment.find((eq) => eq.id === formData.equipment);
+
+        // Upload images to ImgBB
+        let idPhotoUrl = "Not uploaded";
+        let receiptUrl = "Not uploaded";
+
+        if (idFile) {
+          idPhotoUrl = await uploadToImgBB(idFile);
+        }
+        if (receiptFile) {
+          receiptUrl = await uploadToImgBB(receiptFile);
+        }
 
         const templateParams: Record<string, unknown> = {
           name: formData.name,
@@ -57,8 +85,8 @@ export default function BookingPage() {
           purpose: formData.purpose || "Not specified",
           id_type: formData.idType,
           payment_method: paymentMethod,
-          id_photo: idFile || undefined,
-          receipt: receiptFile || undefined,
+          id_photo: idPhotoUrl,
+          receipt: receiptUrl,
         };
 
         await emailjs.send(
