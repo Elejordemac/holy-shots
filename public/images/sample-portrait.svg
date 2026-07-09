@@ -1,0 +1,78 @@
+<svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Soft blurred background -->
+  <rect width="600" height="400" fill="url(#portraitBg)"/>
+  
+  <!-- Bokeh circles -->
+  <circle cx="80" cy="60" r="30" fill="#C5A044" opacity="0.15"/>
+  <circle cx="520" cy="80" r="40" fill="#E8D48B" opacity="0.12"/>
+  <circle cx="50" cy="300" r="25" fill="#C5A044" opacity="0.1"/>
+  <circle cx="560" cy="320" r="35" fill="#E8D48B" opacity="0.1"/>
+  <circle cx="150" cy="350" r="20" fill="#C5A044" opacity="0.08"/>
+  <circle cx="480" cy="350" r="28" fill="#FFD93D" opacity="0.08"/>
+  <circle cx="100" cy="150" r="18" fill="#E8D48B" opacity="0.1"/>
+  <circle cx="530" cy="200" r="22" fill="#C5A044" opacity="0.12"/>
+  
+  <!-- Subject silhouette - person with camera -->
+  <ellipse cx="300" cy="380" rx="80" ry="20" fill="#1A1A1A" opacity="0.3"/>
+  
+  <!-- Body -->
+  <path d="M260 250 Q260 220 280 200 L280 380 L320 380 L320 200 Q340 220 340 250 L340 380 L260 380Z" fill="#2C2C2C"/>
+  
+  <!-- Shoulders -->
+  <path d="M240 260 Q260 230 300 225 Q340 230 360 260 L360 380 L240 380Z" fill="#333333"/>
+  
+  <!-- Neck -->
+  <rect x="285" y="175" width="30" height="35" rx="5" fill="#D4A574"/>
+  
+  <!-- Head -->
+  <ellipse cx="300" cy="155" rx="42" ry="50" fill="#D4A574"/>
+  
+  <!-- Hair -->
+  <path d="M258 140 Q260 100 300 95 Q340 100 342 140 Q340 120 300 118 Q260 120 258 140Z" fill="#2C1810"/>
+  <path d="M255 145 Q255 110 300 105 Q345 110 345 145 L345 130 Q340 108 300 102 Q260 108 255 130Z" fill="#3D2317"/>
+  
+  <!-- Face features -->
+  <ellipse cx="285" cy="150" rx="4" ry="3" fill="#2C1810"/>
+  <ellipse cx="315" cy="150" rx="4" ry="3" fill="#2C1810"/>
+  <path d="M290 170 Q300 177 310 170" stroke="#B8835C" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Camera being held -->
+  <rect x="320" y="240" width="60" height="40" rx="8" fill="#1A1A1A"/>
+  <rect x="340" y="228" width="25" height="15" rx="4" fill="#2A2A2A"/>
+  <circle cx="350" cy="260" r="14" fill="#0D0D0D"/>
+  <circle cx="350" cy="260" r="10" fill="#1A1A2E"/>
+  <circle cx="350" cy="260" r="6" fill="#333"/>
+  <ellipse cx="347" cy="256" rx="3" ry="2" fill="white" opacity="0.2"/>
+  
+  <!-- Arms holding camera -->
+  <path d="M320 260 Q310 250 300 260 Q290 270 280 265" stroke="#D4A574" stroke-width="16" stroke-linecap="round" fill="none"/>
+  
+  <!-- Warm light glow -->
+  <circle cx="300" cy="200" r="150" fill="url(#warmGlow)" opacity="0.15"/>
+  
+  <!-- Camera frame with rule of thirds -->
+  <rect x="10" y="10" width="580" height="380" rx="8" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+  <line x1="203" y1="10" x2="203" y2="390" stroke="white" stroke-width="0.5" opacity="0.2"/>
+  <line x1="397" y1="10" x2="397" y2="390" stroke="white" stroke-width="0.5" opacity="0.2"/>
+  <line x1="10" y1="137" x2="590" y2="137" stroke="white" stroke-width="0.5" opacity="0.2"/>
+  <line x1="10" y1="263" x2="590" y2="263" stroke="white" stroke-width="0.5" opacity="0.2"/>
+  
+  <!-- Focus point indicator -->
+  <rect x="270" y="125" width="60" height="60" rx="2" fill="none" stroke="#C5A044" stroke-width="1.5" opacity="0.7"/>
+  <line x1="275" y1="155" x2="282" y2="155" stroke="#C5A044" stroke-width="1" opacity="0.7"/>
+  <line x1="318" y1="155" x2="325" y2="155" stroke="#C5A044" stroke-width="1" opacity="0.7"/>
+  <line x1="300" y1="130" x2="300" y2="137" stroke="#C5A044" stroke-width="1" opacity="0.7"/>
+  <line x1="300" y1="178" x2="300" y2="185" stroke="#C5A044" stroke-width="1" opacity="0.7"/>
+  
+  <defs>
+    <linearGradient id="portraitBg" x1="0" y1="0" x2="600" y2="400">
+      <stop offset="0%" stop-color="#2C1810"/>
+      <stop offset="50%" stop-color="#3D2317"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+    <radialGradient id="warmGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD93D"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+</svg>

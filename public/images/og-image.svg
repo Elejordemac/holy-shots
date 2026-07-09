@@ -1,0 +1,59 @@
+<svg viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+  
+  <!-- Decorative pattern -->
+  <circle cx="100" cy="100" r="200" fill="#C5A044" opacity="0.03"/>
+  <circle cx="1100" cy="530" r="250" fill="#C5A044" opacity="0.03"/>
+  <circle cx="600" cy="315" r="300" fill="#C5A044" opacity="0.02"/>
+  
+  <!-- Gold accent lines -->
+  <line x1="80" y1="80" x2="200" y2="80" stroke="#C5A044" stroke-width="2" opacity="0.5"/>
+  <line x1="80" y1="80" x2="80" y2="200" stroke="#C5A044" stroke-width="2" opacity="0.5"/>
+  <line x1="1120" y1="550" x2="1000" y2="550" stroke="#C5A044" stroke-width="2" opacity="0.5"/>
+  <line x1="1120" y1="550" x2="1120" y2="430" stroke="#C5A044" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Camera icon -->
+  <g transform="translate(500, 180)">
+    <rect x="0" y="30" width="200" height="130" rx="20" fill="none" stroke="#C5A044" stroke-width="3"/>
+    <rect x="60" y="10" width="80" height="30" rx="10" fill="none" stroke="#C5A044" stroke-width="2.5"/>
+    <circle cx="100" cy="95" r="40" fill="none" stroke="#C5A044" stroke-width="3"/>
+    <circle cx="100" cy="95" r="28" fill="none" stroke="#C5A044" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="100" cy="95" r="15" fill="#C5A044" opacity="0.2"/>
+    <circle cx="160" cy="50" r="8" fill="#C5A044" opacity="0.6"/>
+    <!-- Halo above camera -->
+    <path d="M50 5 C50 -20 150 -20 150 5" stroke="#E8D48B" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </g>
+  
+  <!-- Sparkles -->
+  <path d="M200 200 L205 210 L200 220 L195 210 Z" fill="#E8D48B" opacity="0.4"/>
+  <path d="M950 150 L955 160 L950 170 L945 160 Z" fill="#E8D48B" opacity="0.4"/>
+  <path d="M150 450 L155 460 L150 470 L145 460 Z" fill="#C5A044" opacity="0.3"/>
+  <path d="M1050 350 L1055 360 L1050 370 L1045 360 Z" fill="#C5A044" opacity="0.3"/>
+  
+  <!-- Main text -->
+  <text x="600" y="420" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="white" letter-spacing="2">Holy Shots</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="480" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#C5A044" font-weight="500" letter-spacing="4">PREMIUM CAMERA RENTALS</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="540" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#999" font-weight="300">Capture moments. Create memories.</text>
+  
+  <!-- Gold bottom bar -->
+  <rect x="250" y="580" width="700" height="3" rx="1.5" fill="url(#goldBar)" opacity="0.6"/>
+  
+  <defs>
+    <linearGradient id="ogBg" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="50%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#0D0D1A"/>
+    </linearGradient>
+    <linearGradient id="goldBar" x1="250" y1="0" x2="950" y2="0">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="20%" stop-color="#C5A044"/>
+      <stop offset="80%" stop-color="#C5A044"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+</svg>

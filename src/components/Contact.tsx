@@ -72,7 +72,7 @@ export default function Contact() {
 
               <div className="mt-8 sm:mt-10 space-y-4 sm:space-y-6">
                 <motion.a
-                  href="https://instagram.com/holyshots"
+                  href="https://instagram.com/Elejordemac"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-[#C5A044]/30 transition-all duration-300"
@@ -89,7 +89,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Instagram</p>
-                    <p className="text-sm text-gray-500">@holyshots</p>
+                    <p className="text-sm text-gray-500">@Elejordemac</p>
                   </div>
                 </motion.a>
 

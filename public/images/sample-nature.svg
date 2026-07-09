@@ -1,0 +1,56 @@
+<svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky gradient background -->
+  <rect width="600" height="400" fill="url(#skyGrad)"/>
+  
+  <!-- Sun -->
+  <circle cx="480" cy="80" r="45" fill="#FFD93D" opacity="0.9"/>
+  <circle cx="480" cy="80" r="55" fill="#FFD93D" opacity="0.2"/>
+  
+  <!-- Clouds -->
+  <ellipse cx="120" cy="70" rx="50" ry="20" fill="white" opacity="0.7"/>
+  <ellipse cx="150" cy="60" rx="40" ry="18" fill="white" opacity="0.6"/>
+  <ellipse cx="350" cy="90" rx="45" ry="16" fill="white" opacity="0.5"/>
+  
+  <!-- Mountains back -->
+  <path d="M0 280 L100 160 L200 220 L300 140 L400 200 L500 150 L600 230 L600 400 L0 400Z" fill="#2D5F3E" opacity="0.6"/>
+  
+  <!-- Mountains front -->
+  <path d="M0 320 L80 220 L160 270 L250 190 L350 260 L450 210 L550 270 L600 250 L600 400 L0 400Z" fill="#1B4332"/>
+  
+  <!-- Trees -->
+  <path d="M50 320 L60 270 L55 275 L65 240 L58 245 L63 220 L50 250 L45 245 L52 275 L47 270 L50 320Z" fill="#2D6A4F"/>
+  <rect x="48" y="320" width="5" height="15" fill="#5C4033"/>
+  
+  <path d="M130 310 L140 260 L135 265 L145 230 L138 235 L143 210 L130 240 L125 235 L132 265 L127 260 L130 310Z" fill="#40916C"/>
+  <rect x="128" y="310" width="5" height="15" fill="#5C4033"/>
+  
+  <path d="M520 290 L530 240 L525 245 L535 210 L528 215 L533 190 L520 220 L515 215 L522 245 L517 240 L520 290Z" fill="#2D6A4F"/>
+  <rect x="518" y="290" width="5" height="15" fill="#5C4033"/>
+  
+  <!-- Lake -->
+  <ellipse cx="350" cy="360" rx="180" ry="40" fill="#1B4F72" opacity="0.5"/>
+  <ellipse cx="350" cy="355" rx="150" ry="25" fill="#5DADE2" opacity="0.3"/>
+  
+  <!-- Grass foreground -->
+  <path d="M0 370 Q150 350 300 365 Q450 380 600 360 L600 400 L0 400Z" fill="#27AE60" opacity="0.8"/>
+  
+  <!-- Flowers -->
+  <circle cx="80" cy="375" r="4" fill="#E74C3C"/>
+  <circle cx="200" cy="380" r="3" fill="#F39C12"/>
+  <circle cx="450" cy="370" r="4" fill="#9B59B6"/>
+  <circle cx="530" cy="378" r="3" fill="#E74C3C"/>
+  
+  <!-- Camera frame overlay -->
+  <rect x="10" y="10" width="580" height="380" rx="8" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+  <rect x="250" y="185" width="100" height="30" rx="4" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+  <line x1="300" y1="180" x2="300" y2="220" stroke="white" stroke-width="0.5" opacity="0.4"/>
+  <line x1="245" y1="200" x2="355" y2="200" stroke="white" stroke-width="0.5" opacity="0.4"/>
+  
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="400">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="60%" stop-color="#E0F7FA"/>
+      <stop offset="100%" stop-color="#81C784"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,104 @@
+<svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Night sky -->
+  <rect width="600" height="400" fill="url(#nightSky)"/>
+  
+  <!-- Stars -->
+  <circle cx="50" cy="30" r="1.5" fill="white" opacity="0.8"/>
+  <circle cx="120" cy="60" r="1" fill="white" opacity="0.6"/>
+  <circle cx="200" cy="25" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="320" cy="45" r="1" fill="white" opacity="0.5"/>
+  <circle cx="400" cy="20" r="1.5" fill="white" opacity="0.8"/>
+  <circle cx="500" cy="55" r="1" fill="white" opacity="0.6"/>
+  <circle cx="550" cy="30" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="80" cy="80" r="1" fill="white" opacity="0.4"/>
+  <circle cx="450" cy="70" r="1" fill="white" opacity="0.5"/>
+  
+  <!-- Moon -->
+  <circle cx="520" cy="60" r="25" fill="#F5F5DC" opacity="0.9"/>
+  <circle cx="530" cy="55" r="22" fill="url(#nightSky)" opacity="0.3"/>
+  
+  <!-- Buildings back row -->
+  <rect x="20" y="160" width="50" height="240" fill="#1A1A2E"/>
+  <rect x="80" y="130" width="60" height="270" fill="#16213E"/>
+  <rect x="150" y="180" width="45" height="220" fill="#1A1A2E"/>
+  <rect x="210" y="100" width="70" height="300" fill="#0F3460"/>
+  <rect x="290" y="150" width="55" height="250" fill="#1A1A2E"/>
+  <rect x="355" y="120" width="65" height="280" fill="#16213E"/>
+  <rect x="430" y="170" width="50" height="230" fill="#1A1A2E"/>
+  <rect x="490" y="140" width="60" height="260" fill="#0F3460"/>
+  <rect x="560" y="180" width="40" height="220" fill="#16213E"/>
+  
+  <!-- Windows - Building 1 -->
+  <rect x="30" y="175" width="8" height="10" fill="#FFD93D" opacity="0.8"/>
+  <rect x="45" y="175" width="8" height="10" fill="#FFD93D" opacity="0.5"/>
+  <rect x="30" y="200" width="8" height="10" fill="#FFD93D" opacity="0.6"/>
+  <rect x="45" y="200" width="8" height="10" fill="#87CEEB" opacity="0.4"/>
+  <rect x="30" y="225" width="8" height="10" fill="#FFD93D" opacity="0.7"/>
+  
+  <!-- Windows - Building 2 -->
+  <rect x="90" y="145" width="10" height="12" fill="#FFD93D" opacity="0.7"/>
+  <rect x="110" y="145" width="10" height="12" fill="#87CEEB" opacity="0.5"/>
+  <rect x="90" y="170" width="10" height="12" fill="#FFD93D" opacity="0.6"/>
+  <rect x="110" y="170" width="10" height="12" fill="#FFD93D" opacity="0.8"/>
+  <rect x="90" y="195" width="10" height="12" fill="#87CEEB" opacity="0.4"/>
+  <rect x="110" y="195" width="10" height="12" fill="#FFD93D" opacity="0.6"/>
+  <rect x="90" y="220" width="10" height="12" fill="#FFD93D" opacity="0.5"/>
+  <rect x="110" y="220" width="10" height="12" fill="#FFD93D" opacity="0.7"/>
+  
+  <!-- Windows - Tall building -->
+  <rect x="220" y="115" width="12" height="14" fill="#FFD93D" opacity="0.9"/>
+  <rect x="240" y="115" width="12" height="14" fill="#87CEEB" opacity="0.6"/>
+  <rect x="260" y="115" width="12" height="14" fill="#FFD93D" opacity="0.7"/>
+  <rect x="220" y="145" width="12" height="14" fill="#87CEEB" opacity="0.5"/>
+  <rect x="240" y="145" width="12" height="14" fill="#FFD93D" opacity="0.8"/>
+  <rect x="260" y="145" width="12" height="14" fill="#FFD93D" opacity="0.6"/>
+  <rect x="220" y="175" width="12" height="14" fill="#FFD93D" opacity="0.7"/>
+  <rect x="240" y="175" width="12" height="14" fill="#FFD93D" opacity="0.5"/>
+  <rect x="260" y="175" width="12" height="14" fill="#87CEEB" opacity="0.4"/>
+  
+  <!-- More windows scattered -->
+  <rect x="365" y="135" width="10" height="12" fill="#FFD93D" opacity="0.7"/>
+  <rect x="385" y="135" width="10" height="12" fill="#FFD93D" opacity="0.6"/>
+  <rect x="365" y="160" width="10" height="12" fill="#87CEEB" opacity="0.5"/>
+  <rect x="385" y="160" width="10" height="12" fill="#FFD93D" opacity="0.8"/>
+  <rect x="365" y="185" width="10" height="12" fill="#FFD93D" opacity="0.5"/>
+  <rect x="385" y="185" width="10" height="12" fill="#FFD93D" opacity="0.7"/>
+  
+  <rect x="500" y="155" width="10" height="12" fill="#FFD93D" opacity="0.6"/>
+  <rect x="520" y="155" width="10" height="12" fill="#87CEEB" opacity="0.5"/>
+  <rect x="500" y="180" width="10" height="12" fill="#FFD93D" opacity="0.8"/>
+  <rect x="520" y="180" width="10" height="12" fill="#FFD93D" opacity="0.5"/>
+  <rect x="500" y="205" width="10" height="12" fill="#FFD93D" opacity="0.7"/>
+  
+  <!-- Road -->
+  <rect x="0" y="370" width="600" height="30" fill="#2C3E50"/>
+  <rect x="30" y="383" width="40" height="4" rx="2" fill="#F39C12" opacity="0.6"/>
+  <rect x="100" y="383" width="40" height="4" rx="2" fill="#F39C12" opacity="0.6"/>
+  <rect x="170" y="383" width="40" height="4" rx="2" fill="#F39C12" opacity="0.6"/>
+  <rect x="240" y="383" width="40" height="4" rx="2" fill="#F39C12" opacity="0.6"/>
+  <rect x="310" y="383" width="40" height="4" rx="2" fill="#F39C12" opacity="0.6"/>
+  <rect x="380" y="383" width="40" height="4" rx="2" fill="#F39C12" opacity="0.6"/>
+  <rect x="450" y="383" width="40" height="4" rx="2" fill="#F39C12" opacity="0.6"/>
+  <rect x="520" y="383" width="40" height="4" rx="2" fill="#F39C12" opacity="0.6"/>
+  
+  <!-- Street lights -->
+  <rect x="150" y="320" width="3" height="50" fill="#555"/>
+  <circle cx="151" cy="318" r="6" fill="#FFD93D" opacity="0.8"/>
+  <circle cx="151" cy="318" r="12" fill="#FFD93D" opacity="0.15"/>
+  
+  <rect x="400" y="320" width="3" height="50" fill="#555"/>
+  <circle cx="401" cy="318" r="6" fill="#FFD93D" opacity="0.8"/>
+  <circle cx="401" cy="318" r="12" fill="#FFD93D" opacity="0.15"/>
+  
+  <!-- Camera frame overlay -->
+  <rect x="10" y="10" width="580" height="380" rx="8" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+  <circle cx="300" cy="200" r="3" fill="white" opacity="0.5"/>
+  
+  <defs>
+    <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="400">
+      <stop offset="0%" stop-color="#0C0C1E"/>
+      <stop offset="50%" stop-color="#1A1A3E"/>
+      <stop offset="100%" stop-color="#2C3E50"/>
+    </linearGradient>
+  </defs>
+</svg>

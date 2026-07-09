@@ -22,7 +22,26 @@ const equipment = [
       "Live streaming capable",
       "Compact & lightweight",
     ],
-    image: "/images/canon-g7x.jpg",
+    image: "/images/G7X.jpg",
+    available: true,
+  },
+];
+
+const comingSoon = [
+  {
+    name: "Canon EOS R50",
+    category: "Mirrorless Camera",
+    description: "Lightweight mirrorless with 4K video and subject detection AF.",
+  },
+  {
+    name: "DJI Pocket 3",
+    category: "Gimbal Camera",
+    description: "Stabilized pocket camera with 4K/120fps and 1-inch sensor.",
+  },
+  {
+    name: "Rode Wireless Go II",
+    category: "Wireless Microphone",
+    description: "Dual-channel wireless mic system for interviews and vlogs.",
   },
 ];
 
@@ -127,6 +146,32 @@ export default function Equipment() {
             </AnimateOnScroll>
           ))}
         </div>
+
+        {/* Coming Soon */}
+        <AnimateOnScroll className="mt-16 sm:mt-20">
+          <h3 className="text-center text-xl sm:text-2xl font-bold text-gray-900 mb-8">
+            Coming Soon
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {comingSoon.map((item, index) => (
+              <motion.div
+                key={item.name}
+                className="p-5 sm:p-6 bg-gray-50 rounded-2xl border border-gray-200 border-dashed relative overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 * index }}
+              >
+                <div className="absolute top-3 right-3 px-2 py-0.5 bg-[#C5A044]/10 rounded-full">
+                  <span className="text-xs font-medium text-[#C5A044]">Soon</span>
+                </div>
+                <span className="text-xs text-[#C5A044] font-medium">{item.category}</span>
+                <h4 className="mt-1 text-base sm:text-lg font-bold text-gray-900">{item.name}</h4>
+                <p className="mt-2 text-sm text-gray-500">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

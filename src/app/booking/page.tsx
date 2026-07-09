@@ -508,29 +508,17 @@ export default function BookingPage() {
                   </p>
                 </div>
 
-                {/* QR Code Placeholder */}
-                <div className="w-64 h-64 mx-auto bg-gray-100 rounded-2xl border-2 border-dashed border-gray-300 flex items-center justify-center">
-                  <div className="text-center">
-                    <svg
-                      className="w-16 h-16 mx-auto text-gray-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"
-                      />
-                    </svg>
-                    <p className="mt-3 text-sm text-gray-400">
-                      {paymentMethod} QR Code
-                    </p>
-                    <p className="text-xs text-gray-300 mt-1">
-                      (Replace with actual QR)
-                    </p>
-                  </div>
+                {/* QR Code */}
+                <div className="w-64 h-64 mx-auto rounded-2xl overflow-hidden border border-gray-200">
+                  {paymentMethod === "GCash" && (
+                    <img src="/images/GCASH.jpg" alt="GCash QR Code" className="w-full h-full object-cover" />
+                  )}
+                  {paymentMethod === "BPI" && (
+                    <img src="/images/BPI.jpg" alt="BPI QR Code" className="w-full h-full object-cover" />
+                  )}
+                  {paymentMethod === "UnionBank" && (
+                    <img src="/images/UNIONBANK.jpg" alt="UnionBank QR Code" className="w-full h-full object-cover" />
+                  )}
                 </div>
 
                 <div className="bg-[#C5A044]/5 rounded-xl p-4 border border-[#C5A044]/20">
@@ -538,12 +526,12 @@ export default function BookingPage() {
                     After payment, please upload your proof of payment below
                     and send a screenshot to our Instagram{" "}
                     <a
-                      href="https://instagram.com/holyshots"
+                      href="https://instagram.com/Elejordemac"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-semibold text-[#C5A044]"
                     >
-                      @holyshots
+                      @Elejordemac
                     </a>{" "}
                     for faster confirmation.
                   </p>

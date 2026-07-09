@@ -1,0 +1,76 @@
+<svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Warm background -->
+  <rect width="600" height="400" fill="url(#foodBg)"/>
+  
+  <!-- Table surface -->
+  <ellipse cx="300" cy="380" rx="320" ry="80" fill="#5C3D2E" opacity="0.4"/>
+  <ellipse cx="300" cy="360" rx="280" ry="60" fill="#8B5E3C" opacity="0.3"/>
+  
+  <!-- Main plate -->
+  <ellipse cx="300" cy="240" rx="130" ry="100" fill="#F5F5F5"/>
+  <ellipse cx="300" cy="240" rx="120" ry="92" fill="#FAFAFA"/>
+  <ellipse cx="300" cy="240" rx="110" ry="84" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <!-- Food on plate - pasta/bowl -->
+  <ellipse cx="300" cy="230" rx="85" ry="60" fill="#F4A460"/>
+  <ellipse cx="300" cy="225" rx="80" ry="55" fill="#CD853F"/>
+  
+  <!-- Pasta strands -->
+  <path d="M250 220 Q270 200 290 225 Q310 250 330 220" stroke="#FFD700" stroke-width="3" fill="none" opacity="0.8"/>
+  <path d="M260 230 Q280 210 300 235 Q320 260 340 230" stroke="#F4A460" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M270 215 Q290 195 310 220 Q330 245 350 215" stroke="#FFD700" stroke-width="2.5" fill="none" opacity="0.6"/>
+  
+  <!-- Garnish -->
+  <circle cx="280" cy="210" r="5" fill="#27AE60"/>
+  <circle cx="310" cy="205" r="4" fill="#27AE60"/>
+  <circle cx="295" cy="200" r="3" fill="#2ECC71"/>
+  <circle cx="320" cy="215" r="4" fill="#27AE60" opacity="0.8"/>
+  
+  <!-- Tomato pieces -->
+  <circle cx="270" cy="225" r="6" fill="#E74C3C"/>
+  <circle cx="325" cy="220" r="5" fill="#E74C3C"/>
+  <circle cx="290" cy="235" r="4" fill="#C0392B"/>
+  
+  <!-- Side glass -->
+  <rect x="460" y="140" width="40" height="80" rx="4" fill="white" opacity="0.3"/>
+  <rect x="462" y="150" width="36" height="65" rx="3" fill="#C0392B" opacity="0.6"/>
+  <ellipse cx="480" cy="145" rx="20" ry="5" fill="white" opacity="0.4"/>
+  <rect x="470" y="220" width="20" height="50" fill="white" opacity="0.2"/>
+  <ellipse cx="480" cy="270" rx="22" ry="6" fill="white" opacity="0.2"/>
+  
+  <!-- Fork -->
+  <rect x="140" y="180" width="3" height="120" rx="1" fill="#C0C0C0" transform="rotate(-15, 140, 240)"/>
+  <path d="M130 170 L132 140 M135 170 L137 140 M140 170 L142 140 M145 170 L147 140" stroke="#C0C0C0" stroke-width="2" stroke-linecap="round" transform="rotate(-15, 140, 170)"/>
+  
+  <!-- Small side plate -->
+  <ellipse cx="480" cy="320" rx="55" ry="40" fill="#F5F5F5"/>
+  <ellipse cx="480" cy="320" rx="48" ry="35" fill="#FAFAFA"/>
+  <!-- Bread on side plate -->
+  <ellipse cx="480" cy="315" rx="30" ry="18" fill="#DEB887"/>
+  <ellipse cx="480" cy="310" rx="25" ry="14" fill="#D2691E" opacity="0.6"/>
+  
+  <!-- Scattered herbs -->
+  <circle cx="200" cy="300" r="2" fill="#27AE60" opacity="0.5"/>
+  <circle cx="390" cy="280" r="2" fill="#27AE60" opacity="0.4"/>
+  <circle cx="250" cy="310" r="1.5" fill="#2ECC71" opacity="0.4"/>
+  
+  <!-- Steam/aroma lines -->
+  <path d="M280 180 Q275 165 280 150" stroke="white" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M300 175 Q295 160 300 145" stroke="white" stroke-width="1.5" opacity="0.25" stroke-linecap="round"/>
+  <path d="M320 178 Q315 163 320 148" stroke="white" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  
+  <!-- Warm light spots -->
+  <circle cx="150" cy="80" r="60" fill="#FFD93D" opacity="0.08"/>
+  <circle cx="500" cy="60" r="50" fill="#FFD93D" opacity="0.06"/>
+  
+  <!-- Camera frame overlay -->
+  <rect x="10" y="10" width="580" height="380" rx="8" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+  <circle cx="300" cy="200" r="3" fill="white" opacity="0.5"/>
+  
+  <defs>
+    <linearGradient id="foodBg" x1="0" y1="0" x2="0" y2="400">
+      <stop offset="0%" stop-color="#1A1A1A"/>
+      <stop offset="100%" stop-color="#2C1810"/>
+    </linearGradient>
+  </defs>
+</svg>
