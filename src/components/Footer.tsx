@@ -39,19 +39,19 @@ export default function Footer() {
               </h4>
               <div className="space-y-2">
                 {[
-                  { href: "#equipment", label: "Equipment" },
-                  { href: "#about", label: "About Us" },
-                  { href: "#faq", label: "FAQ" },
-                  { href: "#terms", label: "Terms & Conditions" },
-                  { href: "#contact", label: "Contact" },
+                  { href: "/#equipment", label: "Equipment" },
+                  { href: "/#about", label: "About Us" },
+                  { href: "/#faq", label: "FAQ" },
+                  { href: "/#terms", label: "Terms & Conditions" },
+                  { href: "/#contact", label: "Contact" },
                 ].map((link) => (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
                     className="block text-sm text-gray-300 hover:text-[#C5A044] transition-colors hover:translate-x-1 transform duration-200"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

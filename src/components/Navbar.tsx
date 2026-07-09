@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 
 const navLinks = [
-  { href: "#equipment", label: "Equipment" },
-  { href: "#about", label: "About" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
-  { href: "#terms", label: "Terms" },
+  { href: "/#equipment", label: "Equipment" },
+  { href: "/#about", label: "About" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/#contact", label: "Contact" },
+  { href: "/#terms", label: "Terms" },
 ];
 
 export default function Navbar() {
@@ -50,16 +50,19 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link, index) => (
-              <motion.a
+              <motion.div
                 key={link.href}
-                href={link.href}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index, duration: 0.4 }}
-                className="text-sm text-gray-600 hover:text-[#C5A044] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#C5A044] after:transition-all hover:after:w-full"
               >
-                {link.label}
-              </motion.a>
+                <Link
+                  href={link.href}
+                  className="text-sm text-gray-600 hover:text-[#C5A044] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#C5A044] after:transition-all hover:after:w-full"
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
             ))}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -119,17 +122,20 @@ export default function Navbar() {
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link, index) => (
-                <motion.a
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * index }}
-                  className="block text-sm text-gray-600 hover:text-[#C5A044] transition-colors py-2"
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-sm text-gray-600 hover:text-[#C5A044] transition-colors py-2"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
               <Link
                 href="/booking"
