@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence, PanInfo } from "framer-motion";
+import { motion, PanInfo } from "framer-motion";
 
 const banners = [
   {
@@ -25,13 +25,11 @@ const banners = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const startAutoPlay = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
-      setDirection(1);
       setCurrent((prev) => (prev + 1) % banners.length);
     }, 4000);
   }, []);
@@ -46,61 +44,48 @@ export default function Hero() {
   const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const threshold = 50;
     if (info.offset.x < -threshold) {
-      // Swiped left → next
-      setDirection(1);
       setCurrent((prev) => (prev + 1) % banners.length);
       startAutoPlay();
     } else if (info.offset.x > threshold) {
-      // Swiped right → prev
-      setDirection(-1);
       setCurrent((prev) => (prev - 1 + banners.length) % banners.length);
       startAutoPlay();
     }
   };
 
-  const variants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? "100%" : "-100%",
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? "-100%" : "100%",
-      opacity: 0,
-    }),
-  };
-
   return (
-    <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-gray-50 mt-16">
-      {/* Banner slides - swipeable */}
-      <AnimatePresence mode="wait" custom={direction}>
+    <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[85vh] overflow-hidden mt-16">
+      {/* All banners stacked, only current one is visible via opacity */}
+      {banners.map((banner, index) => (
         <motion.div
-          key={current}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.2}
-          onDragEnd={handleDragEnd}
-          className="absolute inset-0 cursor-grab active:cursor-grabbing"
+          key={banner.image}
+          className="absolute inset-0"
+          initial={false}
+          animate={{
+            opacity: index === current ? 1 : 0,
+            scale: index === current ? 1 : 1.05,
+          }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          style={{ zIndex: index === current ? 1 : 0 }}
         >
           <Image
-            src={banners[current].image}
-            alt={banners[current].alt}
+            src={banner.image}
+            alt={banner.alt}
             fill
-            className="object-cover sm:object-contain"
-            priority={current === 0}
+            className="object-cover"
+            priority={index === 0}
             draggable={false}
           />
         </motion.div>
-      </AnimatePresence>
+      ))}
+
+      {/* Swipe overlay */}
+      <motion.div
+        className="absolute inset-0 z-10 cursor-grab active:cursor-grabbing"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.1}
+        onDragEnd={handleDragEnd}
+      />
 
       {/* Slide indicators */}
       <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
@@ -108,7 +93,6 @@ export default function Hero() {
           <button
             key={index}
             onClick={() => {
-              setDirection(index > current ? 1 : -1);
               setCurrent(index);
               startAutoPlay();
             }}
