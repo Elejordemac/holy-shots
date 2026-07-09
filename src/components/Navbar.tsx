@@ -18,8 +18,12 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const scrollToTop = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // If already on homepage, scroll to top; otherwise navigate to /
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    // If on another page, let the Link navigate to "/"
   };
 
   return (
