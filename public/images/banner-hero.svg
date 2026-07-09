@@ -1,4 +1,4 @@
-<svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+<svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
   <defs>
     <linearGradient id="heroBg" x1="0" y1="0" x2="800" y2="400">
       <stop offset="0%" stop-color="#FAFAFA"/>
