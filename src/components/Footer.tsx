@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -6,10 +7,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Logo className="w-8 h-8" />
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <Logo className="w-10 h-10" />
               <span className="text-lg font-semibold">Holy Shots</span>
-            </div>
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Premium camera rentals for creators. Affordable, accessible, and
               always ready for your next project.

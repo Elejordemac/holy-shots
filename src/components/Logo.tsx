@@ -6,23 +6,23 @@ export default function Logo({ className = "w-10 h-10" }: { className?: string }
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Halo ring - subtle golden arc above the lens */}
+      {/* Halo ring - golden arc above the camera */}
       <path
-        d="M20 16 C20 8, 44 8, 44 16"
+        d="M20 16 C20 7, 44 7, 44 16"
         stroke="url(#haloGradient)"
-        strokeWidth="2"
+        strokeWidth="2.5"
         strokeLinecap="round"
         fill="none"
       />
 
-      {/* Camera body - sleek rounded rectangle */}
+      {/* Camera body - golden */}
       <rect
         x="10"
         y="22"
         width="44"
         height="30"
         rx="6"
-        fill="#1A1A1A"
+        fill="url(#bodyGradient)"
       />
 
       {/* Body top edge highlight */}
@@ -32,7 +32,8 @@ export default function Logo({ className = "w-10 h-10" }: { className?: string }
         width="44"
         height="2"
         rx="1"
-        fill="#2A2A2A"
+        fill="#E8D48B"
+        opacity="0.6"
       />
 
       {/* Viewfinder bump */}
@@ -42,47 +43,52 @@ export default function Logo({ className = "w-10 h-10" }: { className?: string }
         width="12"
         height="7"
         rx="3"
-        fill="#111111"
+        fill="#A6852E"
       />
 
       {/* Shutter button */}
-      <circle cx="40" cy="19" r="2.5" fill="#C5A044" />
-      <circle cx="40" cy="19" r="1.5" fill="#D4B66A" />
+      <circle cx="40" cy="19" r="2.5" fill="#E8D48B" />
+      <circle cx="40" cy="19" r="1.5" fill="#FFFFFF" opacity="0.5" />
 
-      {/* Lens outer ring - gold accent */}
-      <circle cx="32" cy="38" r="12" fill="none" stroke="url(#lensGradient)" strokeWidth="2" />
+      {/* Lens outer ring - bright gold */}
+      <circle cx="32" cy="38" r="12" fill="none" stroke="url(#lensGradient)" strokeWidth="2.5" />
 
-      {/* Lens body */}
+      {/* Lens body - dark glass */}
       <circle cx="32" cy="38" r="10.5" fill="#0D0D0D" />
 
       {/* Lens inner rings */}
-      <circle cx="32" cy="38" r="8" fill="none" stroke="#222222" strokeWidth="0.5" />
-      <circle cx="32" cy="38" r="6" fill="none" stroke="#333333" strokeWidth="0.5" />
+      <circle cx="32" cy="38" r="8" fill="none" stroke="#333333" strokeWidth="0.5" />
+      <circle cx="32" cy="38" r="6" fill="none" stroke="#444444" strokeWidth="0.5" />
 
       {/* Lens glass - gradient */}
       <circle cx="32" cy="38" r="5" fill="url(#glassGradient)" />
 
-      {/* Lens reflection - elegant highlight */}
-      <ellipse cx="29.5" cy="35.5" rx="2" ry="1.5" fill="#FFFFFF" opacity="0.25" />
+      {/* Lens reflection */}
+      <ellipse cx="29.5" cy="35.5" rx="2" ry="1.5" fill="#FFFFFF" opacity="0.3" />
       <circle cx="34" cy="40" r="0.8" fill="#FFFFFF" opacity="0.15" />
 
       {/* Aperture blades hint */}
-      <path d="M29 38 L32 35 L35 38 L32 41 Z" fill="none" stroke="#444444" strokeWidth="0.3" opacity="0.6" />
+      <path d="M29 38 L32 35 L35 38 L32 41 Z" fill="none" stroke="#555555" strokeWidth="0.4" opacity="0.5" />
 
       {/* Bottom accent line */}
-      <rect x="22" y="49" width="20" height="1" rx="0.5" fill="#C5A044" opacity="0.6" />
+      <rect x="22" y="49" width="20" height="1.5" rx="0.75" fill="#E8D48B" opacity="0.7" />
 
       {/* Gradients */}
       <defs>
         <linearGradient id="haloGradient" x1="20" y1="12" x2="44" y2="12">
-          <stop offset="0%" stopColor="#C5A044" stopOpacity="0.4" />
-          <stop offset="50%" stopColor="#E8D48B" stopOpacity="1" />
-          <stop offset="100%" stopColor="#C5A044" stopOpacity="0.4" />
+          <stop offset="0%" stopColor="#D4B66A" stopOpacity="0.5" />
+          <stop offset="50%" stopColor="#F0E0A0" stopOpacity="1" />
+          <stop offset="100%" stopColor="#D4B66A" stopOpacity="0.5" />
         </linearGradient>
-        <linearGradient id="lensGradient" x1="20" y1="26" x2="44" y2="50">
+        <linearGradient id="bodyGradient" x1="10" y1="22" x2="54" y2="52">
           <stop offset="0%" stopColor="#D4B66A" />
           <stop offset="50%" stopColor="#C5A044" />
-          <stop offset="100%" stopColor="#8B6914" />
+          <stop offset="100%" stopColor="#A6852E" />
+        </linearGradient>
+        <linearGradient id="lensGradient" x1="20" y1="26" x2="44" y2="50">
+          <stop offset="0%" stopColor="#F0E0A0" />
+          <stop offset="50%" stopColor="#D4B66A" />
+          <stop offset="100%" stopColor="#A6852E" />
         </linearGradient>
         <radialGradient id="glassGradient" cx="45%" cy="40%">
           <stop offset="0%" stopColor="#1a1a2e" />
