@@ -86,25 +86,6 @@ export default function Hero() {
         dragElastic={0.1}
         onDragEnd={handleDragEnd}
       />
-
-      {/* Slide indicators */}
-      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-        {banners.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setCurrent(index);
-              startAutoPlay();
-            }}
-            aria-label={`Go to slide ${index + 1}`}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === current
-                ? "w-8 bg-[#C5A044]"
-                : "w-2 bg-gray-400/50 hover:bg-gray-400"
-            }`}
-          />
-        ))}
-      </div>
     </section>
   );
 }
