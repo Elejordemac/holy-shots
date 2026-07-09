@@ -24,34 +24,34 @@
   <circle cx="100" cy="80" r="40" fill="#C5A044" opacity="0.06"/>
   <circle cx="700" cy="320" r="50" fill="#C5A044" opacity="0.06"/>
 
-  <!-- Halo -->
-  <path d="M350 85 C350 60, 450 60, 450 85" stroke="#E8D48B" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <!-- Halo - centered -->
+  <path d="M355 115 C355 92, 445 92, 445 115" stroke="#E8D48B" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8"/>
 
-  <!-- Camera body -->
-  <rect x="330" y="95" width="140" height="95" rx="16" fill="url(#bodyGrad1)"/>
-  <rect x="330" y="95" width="140" height="4" rx="2" fill="#E8D48B" opacity="0.5"/>
+  <!-- Camera body - centered at y ~155 -->
+  <rect x="335" y="120" width="130" height="90" rx="14" fill="url(#bodyGrad1)"/>
+  <rect x="335" y="120" width="130" height="4" rx="2" fill="#E8D48B" opacity="0.5"/>
   <!-- Viewfinder -->
-  <rect x="370" y="78" width="60" height="22" rx="8" fill="#A6852E"/>
+  <rect x="372" y="105" width="56" height="20" rx="8" fill="#A6852E"/>
   <!-- Shutter -->
-  <circle cx="420" cy="86" r="6" fill="#E8D48B"/>
+  <circle cx="418" cy="112" r="5" fill="#E8D48B"/>
   <!-- Lens outer -->
-  <circle cx="400" cy="145" r="35" fill="none" stroke="url(#lensGrad1)" stroke-width="4"/>
+  <circle cx="400" cy="168" r="32" fill="none" stroke="url(#lensGrad1)" stroke-width="3.5"/>
   <!-- Lens body -->
-  <circle cx="400" cy="145" r="30" fill="#0D0D0D"/>
-  <circle cx="400" cy="145" r="22" fill="none" stroke="#333" stroke-width="0.8"/>
-  <circle cx="400" cy="145" r="15" fill="url(#glass1)"/>
+  <circle cx="400" cy="168" r="27" fill="#0D0D0D"/>
+  <circle cx="400" cy="168" r="20" fill="none" stroke="#333" stroke-width="0.7"/>
+  <circle cx="400" cy="168" r="13" fill="url(#glass1)"/>
   <!-- Reflection -->
-  <ellipse cx="393" cy="138" rx="5" ry="4" fill="white" opacity="0.2"/>
+  <ellipse cx="394" cy="162" rx="4" ry="3" fill="white" opacity="0.2"/>
   <!-- Bottom accent -->
-  <rect x="370" y="182" width="60" height="3" rx="1.5" fill="#E8D48B" opacity="0.6"/>
+  <rect x="372" y="202" width="56" height="3" rx="1.5" fill="#E8D48B" opacity="0.6"/>
 
-  <!-- Text -->
-  <text x="400" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="32" font-weight="700" fill="white">Premium Camera Rentals</text>
-  <text x="400" y="285" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#D4B66A" font-style="italic">Capture moments that matter</text>
+  <!-- Text - centered below camera -->
+  <text x="400" y="260" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="white">Premium Camera Rentals</text>
+  <text x="400" y="292" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#D4B66A" font-style="italic">Capture moments that matter</text>
 
   <!-- Sparkles -->
-  <path d="M180 140 L185 150 L180 160 L175 150 Z" fill="#E8D48B" opacity="0.4"/>
-  <path d="M620 120 L625 130 L620 140 L615 130 Z" fill="#E8D48B" opacity="0.4"/>
-  <path d="M250 300 L254 308 L250 316 L246 308 Z" fill="#D4B66A" opacity="0.3"/>
-  <path d="M580 280 L584 288 L580 296 L576 288 Z" fill="#D4B66A" opacity="0.3"/>
+  <path d="M185 165 L190 175 L185 185 L180 175 Z" fill="#E8D48B" opacity="0.4"/>
+  <path d="M615 155 L620 165 L615 175 L610 165 Z" fill="#E8D48B" opacity="0.4"/>
+  <path d="M250 250 L254 258 L250 266 L246 258 Z" fill="#D4B66A" opacity="0.3"/>
+  <path d="M560 245 L564 253 L560 261 L556 253 Z" fill="#D4B66A" opacity="0.3"/>
 </svg>
