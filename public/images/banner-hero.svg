@@ -30,31 +30,20 @@
   </g>
 
   <!-- Badge -->
-  <rect x="475" y="80" width="250" height="32" rx="16" fill="none" stroke="#C5A044" stroke-opacity="0.4"/>
-  <text x="600" y="102" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#C5A044">Premium Camera Rentals</text>
+  <rect x="475" y="100" width="250" height="32" rx="16" fill="none" stroke="#C5A044" stroke-opacity="0.4"/>
+  <text x="600" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#C5A044">Premium Camera Rentals</text>
 
   <!-- Main heading -->
-  <text x="600" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="56" font-weight="800" fill="#171717" letter-spacing="-1">Capture Your</text>
-  <text x="600" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="56" font-weight="800" fill="#C5A044" letter-spacing="-1">Holy Shot</text>
+  <text x="600" y="210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="#171717" letter-spacing="-1">Capture Your</text>
+  <text x="600" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="#C5A044" letter-spacing="-1">Holy Shot</text>
 
   <!-- Subtext -->
-  <text x="600" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#737373">Rent premium cameras for your creative projects.</text>
-  <text x="600" y="326" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#737373">Professional equipment, affordable rates, hassle-free experience.</text>
+  <text x="600" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#737373">Rent premium cameras for your creative projects.</text>
+  <text x="600" y="375" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#737373">Professional equipment, affordable rates, hassle-free experience.</text>
 
-  <!-- CTA Buttons -->
-  <rect x="380" y="355" width="200" height="48" rx="24" fill="#C5A044"/>
-  <text x="480" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="white">Reserve Equipment</text>
-
-  <rect x="610" y="355" width="200" height="48" rx="24" fill="none" stroke="#D4D4D4" stroke-width="1.5"/>
-  <text x="710" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#404040">View Equipment</text>
-
-  <!-- Stats -->
-  <text x="440" y="445" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#171717">₱600</text>
-  <text x="440" y="468" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#737373">Per Day</text>
-
-  <text x="600" y="445" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#171717">₱800</text>
-  <text x="600" y="468" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#737373">Weekdays</text>
-
-  <text x="760" y="445" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#171717">24/7</text>
-  <text x="760" y="468" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#737373">Support</text>
+  <!-- Sparkle decorations -->
+  <path d="M180 250 L188 265 L180 280 L172 265 Z" fill="#C5A044" opacity="0.3"/>
+  <path d="M1020 200 L1028 215 L1020 230 L1012 215 Z" fill="#C5A044" opacity="0.3"/>
+  <path d="M250 380 L256 392 L250 404 L244 392 Z" fill="#D4B66A" opacity="0.2"/>
+  <path d="M950 120 L956 132 L950 144 L944 132 Z" fill="#D4B66A" opacity="0.2"/>
 </svg>

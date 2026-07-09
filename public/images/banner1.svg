@@ -14,27 +14,28 @@
   <rect width="1200" height="500" fill="url(#bg1)"/>
   
   <!-- Decorative circles -->
-  <circle cx="150" cy="100" r="60" fill="#C5A044" opacity="0.1"/>
-  <circle cx="1050" cy="400" r="80" fill="#C5A044" opacity="0.1"/>
-  <circle cx="900" cy="80" r="40" fill="#D4B66A" opacity="0.15"/>
+  <circle cx="150" cy="100" r="60" fill="#C5A044" opacity="0.08"/>
+  <circle cx="1050" cy="400" r="80" fill="#C5A044" opacity="0.08"/>
+  <circle cx="900" cy="80" r="40" fill="#D4B66A" opacity="0.1"/>
+  <circle cx="250" cy="380" r="50" fill="#C5A044" opacity="0.06"/>
   
   <!-- Camera icon large -->
-  <rect x="420" y="120" width="360" height="220" rx="30" fill="url(#gold1)" opacity="0.9"/>
-  <rect x="520" y="85" width="160" height="50" rx="20" fill="#A6852E"/>
-  <circle cx="600" cy="230" r="80" fill="#0D0D0D"/>
-  <circle cx="600" cy="230" r="65" fill="#1a1a2e"/>
-  <circle cx="600" cy="230" r="50" fill="#0D0D0D"/>
-  <circle cx="600" cy="230" r="30" fill="#16213e"/>
-  <ellipse cx="580" cy="210" rx="15" ry="10" fill="white" opacity="0.3"/>
-  <circle cx="720" cy="110" r="15" fill="#E8D48B"/>
+  <rect x="450" y="100" width="300" height="190" rx="25" fill="url(#gold1)" opacity="0.9"/>
+  <rect x="530" y="70" width="140" height="45" rx="18" fill="#A6852E"/>
+  <circle cx="600" cy="195" r="70" fill="#0D0D0D"/>
+  <circle cx="600" cy="195" r="55" fill="#1a1a2e"/>
+  <circle cx="600" cy="195" r="40" fill="#0D0D0D"/>
+  <circle cx="600" cy="195" r="25" fill="#16213e"/>
+  <ellipse cx="582" cy="178" rx="12" ry="8" fill="white" opacity="0.3"/>
+  <circle cx="690" cy="90" r="12" fill="#E8D48B"/>
   
   <!-- Text -->
-  <text x="600" y="410" text-anchor="middle" font-family="system-ui" font-size="42" font-weight="bold" fill="white">Premium Camera Rentals</text>
-  <text x="600" y="460" text-anchor="middle" font-family="system-ui" font-size="22" fill="#D4B66A">Capture moments that matter</text>
+  <text x="600" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="40" font-weight="700" fill="white">Premium Camera Rentals</text>
+  <text x="600" y="410" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#D4B66A">Capture moments that matter</text>
   
   <!-- Sparkles -->
-  <path d="M200 200 L210 215 L200 230 L190 215 Z" fill="#E8D48B" opacity="0.6"/>
-  <path d="M1000 150 L1010 165 L1000 180 L990 165 Z" fill="#E8D48B" opacity="0.6"/>
-  <path d="M300 380 L308 392 L300 404 L292 392 Z" fill="#D4B66A" opacity="0.5"/>
-  <path d="M950 350 L958 362 L950 374 L942 362 Z" fill="#D4B66A" opacity="0.5"/>
+  <path d="M200 200 L210 215 L200 230 L190 215 Z" fill="#E8D48B" opacity="0.5"/>
+  <path d="M1000 150 L1010 165 L1000 180 L990 165 Z" fill="#E8D48B" opacity="0.5"/>
+  <path d="M300 320 L308 332 L300 344 L292 332 Z" fill="#D4B66A" opacity="0.4"/>
+  <path d="M950 350 L958 362 L950 374 L942 362 Z" fill="#D4B66A" opacity="0.4"/>
 </svg>
