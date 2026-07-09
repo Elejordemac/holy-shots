@@ -20,21 +20,19 @@
   <path d="M0 280 L250 0 L310 0 L60 280 Z" fill="url(#goldAcc)" opacity="0.06"/>
   <path d="M490 400 L740 120 L800 120 L550 400 Z" fill="url(#goldAcc)" opacity="0.06"/>
 
-  <!-- Content centered -->
-  <text x="400" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#D4B66A" letter-spacing="4">HOLY SHOTS</text>
+  <!-- Content tightly centered -->
+  <text x="400" y="135" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#D4B66A" letter-spacing="4">HOLY SHOTS</text>
 
-  <text x="400" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="44" font-weight="800" fill="white">Book Now, Shoot</text>
-  <text x="400" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="44" font-weight="800" fill="#E8D48B">Tomorrow</text>
+  <text x="400" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="38" font-weight="800" fill="white">Book Now, Shoot</text>
+  <text x="400" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="38" font-weight="800" fill="#E8D48B">Tomorrow</text>
 
-  <text x="400" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="rgba(255,255,255,0.7)">Easy booking • Fast pickup • Affordable rates</text>
+  <text x="400" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="rgba(255,255,255,0.7)">Easy booking • Fast pickup • Affordable rates</text>
 
   <!-- Corner decorations -->
   <path d="M0 0 L50 0 L0 50 Z" fill="#C5A044" opacity="0.2"/>
   <path d="M800 400 L750 400 L800 350 Z" fill="#C5A044" opacity="0.2"/>
 
   <!-- Sparkles -->
-  <path d="M100 320 L105 330 L100 340 L95 330 Z" fill="#E8D48B" opacity="0.35"/>
-  <path d="M700 70 L705 80 L700 90 L695 80 Z" fill="#E8D48B" opacity="0.35"/>
-  <path d="M200 60 L204 68 L200 76 L196 68 Z" fill="#D4B66A" opacity="0.25"/>
-  <path d="M620 340 L624 348 L620 356 L616 348 Z" fill="#D4B66A" opacity="0.25"/>
+  <path d="M100 300 L105 310 L100 320 L95 310 Z" fill="#E8D48B" opacity="0.35"/>
+  <path d="M700 90 L705 100 L700 110 L695 100 Z" fill="#E8D48B" opacity="0.35"/>
 </svg>
