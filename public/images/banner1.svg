@@ -6,10 +6,26 @@
       <stop offset="50%" stop-color="#16213e"/>
       <stop offset="100%" stop-color="#0f3460"/>
     </linearGradient>
-    <linearGradient id="gold1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#E8D48B"/>
-      <stop offset="100%" stop-color="#C5A044"/>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4B66A"/>
+      <stop offset="50%" stop-color="#C5A044"/>
+      <stop offset="100%" stop-color="#A6852E"/>
     </linearGradient>
+    <linearGradient id="lensGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0E0A0"/>
+      <stop offset="50%" stop-color="#D4B66A"/>
+      <stop offset="100%" stop-color="#A6852E"/>
+    </linearGradient>
+    <linearGradient id="haloGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D4B66A" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#F0E0A0" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#D4B66A" stop-opacity="0.5"/>
+    </linearGradient>
+    <radialGradient id="glassGrad" cx="45%" cy="40%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="60%" stop-color="#0a0a14"/>
+      <stop offset="100%" stop-color="#000005"/>
+    </radialGradient>
   </defs>
   <rect width="1200" height="500" fill="url(#bg1)"/>
   
@@ -18,20 +34,41 @@
   <circle cx="1050" cy="400" r="80" fill="#C5A044" opacity="0.08"/>
   <circle cx="900" cy="80" r="40" fill="#D4B66A" opacity="0.1"/>
   <circle cx="250" cy="380" r="50" fill="#C5A044" opacity="0.06"/>
+
+  <!-- Holy Shots Logo (scaled up, centered) -->
+  <!-- Halo -->
+  <path d="M530 95 C530 65, 670 65, 670 95" stroke="url(#haloGrad)" stroke-width="5" stroke-linecap="round" fill="none"/>
   
-  <!-- Camera icon large -->
-  <rect x="450" y="100" width="300" height="190" rx="25" fill="url(#gold1)" opacity="0.9"/>
-  <rect x="530" y="70" width="140" height="45" rx="18" fill="#A6852E"/>
-  <circle cx="600" cy="195" r="70" fill="#0D0D0D"/>
-  <circle cx="600" cy="195" r="55" fill="#1a1a2e"/>
-  <circle cx="600" cy="195" r="40" fill="#0D0D0D"/>
-  <circle cx="600" cy="195" r="25" fill="#16213e"/>
-  <ellipse cx="582" cy="178" rx="12" ry="8" fill="white" opacity="0.3"/>
-  <circle cx="690" cy="90" r="12" fill="#E8D48B"/>
+  <!-- Camera body -->
+  <rect x="510" y="110" width="180" height="125" rx="24" fill="url(#bodyGrad)"/>
+  <!-- Body highlight -->
+  <rect x="510" y="110" width="180" height="6" rx="3" fill="#E8D48B" opacity="0.6"/>
+  
+  <!-- Viewfinder -->
+  <rect x="565" y="90" width="70" height="28" rx="12" fill="#A6852E"/>
+  
+  <!-- Shutter button -->
+  <circle cx="640" cy="100" r="10" fill="#E8D48B"/>
+  <circle cx="640" cy="100" r="6" fill="white" opacity="0.5"/>
+  
+  <!-- Lens outer ring -->
+  <circle cx="600" cy="175" r="48" fill="none" stroke="url(#lensGrad)" stroke-width="5"/>
+  <!-- Lens body -->
+  <circle cx="600" cy="175" r="42" fill="#0D0D0D"/>
+  <!-- Lens inner rings -->
+  <circle cx="600" cy="175" r="32" fill="none" stroke="#333" stroke-width="1"/>
+  <circle cx="600" cy="175" r="24" fill="none" stroke="#444" stroke-width="1"/>
+  <!-- Lens glass -->
+  <circle cx="600" cy="175" r="20" fill="url(#glassGrad)"/>
+  <!-- Reflection -->
+  <ellipse cx="590" cy="165" rx="8" ry="6" fill="white" opacity="0.25"/>
+  
+  <!-- Bottom accent -->
+  <rect x="558" y="225" width="84" height="5" rx="2.5" fill="#E8D48B" opacity="0.7"/>
   
   <!-- Text -->
-  <text x="600" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="40" font-weight="700" fill="white">Premium Camera Rentals</text>
-  <text x="600" y="410" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#D4B66A">Capture moments that matter</text>
+  <text x="600" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="40" font-weight="700" fill="white">Premium Camera Rentals</text>
+  <text x="600" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#D4B66A" font-style="italic">Capture moments that matter</text>
   
   <!-- Sparkles -->
   <path d="M200 200 L210 215 L200 230 L190 215 Z" fill="#E8D48B" opacity="0.5"/>
