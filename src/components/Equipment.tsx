@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimateOnScroll from "./AnimateOnScroll";
 
@@ -49,32 +50,13 @@ export default function Equipment() {
                 className="aspect-square bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl flex items-center justify-center overflow-hidden border border-gray-200 hover:border-[#C5A044]/30 transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="text-center p-8">
-                  <motion.svg
-                    className="w-24 h-24 sm:w-32 sm:h-32 mx-auto text-[#C5A044]/40"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    animate={{ rotate: [0, 2, -2, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </motion.svg>
-                  <p className="mt-4 text-sm text-gray-400">
-                    Canon G7X Mark III
-                  </p>
-                </div>
+                <Image
+                  src="/images/G7X.jpg"
+                  alt="Canon G7X Mark III"
+                  width={600}
+                  height={600}
+                  className="object-contain w-full h-full p-4"
+                />
               </motion.div>
             </AnimateOnScroll>
           ))}
