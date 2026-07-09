@@ -25,11 +25,12 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   background-color: var(--white);
   color: var(--gray-800);
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -37,10 +38,37 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gray-300);
-  border-radius: 4px;
+  background: var(--gold);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gray-400);
+  background: var(--gold-dark);
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(197, 160, 68, 0.2);
+  color: var(--gray-900);
+}
+
+/* Focus ring for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* Golden glow effect for interactive elements */
+.gold-glow {
+  box-shadow: 0 0 20px rgba(197, 160, 68, 0.15);
+}
+
+.gold-glow:hover {
+  box-shadow: 0 0 40px rgba(197, 160, 68, 0.25);
 }

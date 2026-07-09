@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 const faqs = [
   {
@@ -44,59 +46,71 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-gray-50">
+    <section id="faq" className="py-16 sm:py-20 md:py-24 bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <AnimateOnScroll className="text-center mb-12 sm:mb-16">
           <span className="text-sm text-[#C5A044] font-medium uppercase tracking-wider">
             FAQ
           </span>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-gray-500">
+          <p className="mt-4 text-gray-500 text-sm sm:text-base">
             Got questions? We&apos;ve got answers.
           </p>
-        </div>
+        </AnimateOnScroll>
 
         <div className="space-y-3">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl border border-gray-100 overflow-hidden"
-            >
-              <button
-                onClick={() =>
-                  setOpenIndex(openIndex === index ? null : index)
-                }
-                className="w-full px-6 py-4 flex items-center justify-between text-left"
+            <AnimateOnScroll key={index} delay={0.05 * index}>
+              <motion.div
+                className="bg-white rounded-xl border border-gray-100 overflow-hidden hover:border-[#C5A044]/20 transition-colors"
+                whileHover={{ scale: 1.01 }}
               >
-                <span className="font-medium text-gray-900 text-sm">
-                  {faq.question}
-                </span>
-                <svg
-                  className={`w-5 h-5 text-gray-400 transition-transform ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                <button
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                  className="w-full px-5 sm:px-6 py-4 flex items-center justify-between text-left"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              {openIndex === index && (
-                <div className="px-6 pb-4">
-                  <p className="text-sm text-gray-500 leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              )}
-            </div>
+                  <span className="font-medium text-gray-900 text-sm sm:text-base pr-4">
+                    {faq.question}
+                  </span>
+                  <motion.svg
+                    className="w-5 h-5 text-[#C5A044] flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </motion.svg>
+                </button>
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 sm:px-6 pb-4">
+                        <p className="text-sm text-gray-500 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>
