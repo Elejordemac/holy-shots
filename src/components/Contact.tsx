@@ -6,7 +6,7 @@ import emailjs from "@emailjs/browser";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const EMAILJS_SERVICE_ID = "service_pfqc3iv";
-const EMAILJS_CONTACT_TEMPLATE_ID = "template_0a7oqqs";
+const EMAILJS_CONTACT_TEMPLATE_ID = "template_1kj3xrv";
 const EMAILJS_PUBLIC_KEY = "vpDTwVtZMtxoj-JpX";
 
 export default function Contact() {
@@ -29,14 +29,6 @@ export default function Contact() {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          equipment: "N/A - Contact Inquiry",
-          phone: "N/A",
-          instagram: "N/A",
-          pickup_date: "N/A",
-          return_date: "N/A",
-          purpose: formData.message,
-          id_type: "N/A",
-          payment_method: "N/A",
         },
         EMAILJS_PUBLIC_KEY
       );
