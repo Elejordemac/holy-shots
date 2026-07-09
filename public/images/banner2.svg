@@ -19,13 +19,12 @@
     <circle cx="740" cy="340" r="3" fill="white"/>
   </g>
 
-  <!-- Content centered and pushed up -->
-  <text x="400" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="3" opacity="0.8">CANON G7X MARK III</text>
+  <!-- All content packed in the middle (y 100-300 range) -->
+  <text x="400" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="3" opacity="0.8">CANON G7X MARK III</text>
 
-  <text x="400" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="white">Vlog Like</text>
-  <text x="400" y="210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="white">A Pro</text>
+  <text x="400" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="46" font-weight="800" fill="white">Vlog Like A Pro</text>
 
-  <text x="400" y="258" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="white" opacity="0.85">4K Video • Flip Screen • Compact</text>
+  <text x="400" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="white" opacity="0.85">4K Video • Flip Screen • Compact</text>
 
-  <text x="400" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700" fill="white">₱600 / day</text>
+  <text x="400" y="285" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700" fill="white">₱600 / day</text>
 </svg>

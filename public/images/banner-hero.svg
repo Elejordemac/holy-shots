@@ -12,29 +12,29 @@
   <rect width="800" height="400" fill="url(#heroBg)"/>
   <ellipse cx="400" cy="200" rx="350" ry="200" fill="url(#heroGlow)"/>
 
-  <!-- Badge -->
-  <rect x="290" y="50" width="220" height="28" rx="14" fill="none" stroke="#C5A044" stroke-opacity="0.5"/>
-  <text x="400" y="69" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#C5A044">Premium Camera Rentals</text>
+  <!-- Badge - centered vertically -->
+  <rect x="290" y="85" width="220" height="28" rx="14" fill="none" stroke="#C5A044" stroke-opacity="0.5"/>
+  <text x="400" y="104" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#C5A044">Premium Camera Rentals</text>
 
   <!-- Main heading -->
-  <text x="400" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="#171717">Capture Your</text>
-  <text x="400" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="#C5A044">Holy Shot</text>
+  <text x="400" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="46" font-weight="800" fill="#171717">Capture Your</text>
+  <text x="400" y="208" text-anchor="middle" font-family="system-ui, sans-serif" font-size="46" font-weight="800" fill="#C5A044">Holy Shot</text>
 
   <!-- Subtext -->
-  <text x="400" y="228" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#737373">Rent premium cameras for your creative projects.</text>
-  <text x="400" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#737373">Professional equipment, affordable rates.</text>
+  <text x="400" y="248" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#737373">Rent premium cameras for your creative projects.</text>
+  <text x="400" y="268" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#737373">Professional equipment, affordable rates.</text>
 
   <!-- Stats -->
-  <text x="280" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#171717">₱600</text>
-  <text x="280" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#737373">Per Day</text>
+  <text x="280" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#171717">₱600</text>
+  <text x="280" y="326" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#737373">Per Day</text>
 
-  <text x="400" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#171717">₱800</text>
-  <text x="400" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#737373">Weekdays</text>
+  <text x="400" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#171717">₱800</text>
+  <text x="400" y="326" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#737373">Weekdays</text>
 
-  <text x="520" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#171717">24/7</text>
-  <text x="520" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#737373">Support</text>
+  <text x="520" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#171717">24/7</text>
+  <text x="520" y="326" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#737373">Support</text>
 
   <!-- Sparkles -->
-  <path d="M150 140 L155 150 L150 160 L145 150 Z" fill="#C5A044" opacity="0.25"/>
-  <path d="M650 120 L655 130 L650 140 L645 130 Z" fill="#C5A044" opacity="0.25"/>
+  <path d="M160 170 L165 180 L160 190 L155 180 Z" fill="#C5A044" opacity="0.25"/>
+  <path d="M640 165 L645 175 L640 185 L635 175 Z" fill="#C5A044" opacity="0.25"/>
 </svg>
