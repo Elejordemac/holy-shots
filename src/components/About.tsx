@@ -113,29 +113,62 @@ export default function About() {
           <AnimateOnScroll direction="right" delay={0.3}>
             <div className="relative">
               <motion.div
-                className="aspect-[4/5] bg-gradient-to-br from-[#C5A044]/5 to-gray-200 rounded-2xl overflow-hidden border border-gray-200"
+                className="aspect-[4/5] bg-gradient-to-br from-[#1a1a2e] to-[#0f3460] rounded-2xl overflow-hidden border border-gray-200"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <svg
-                      className="w-20 h-20 sm:w-24 sm:h-24 mx-auto text-[#C5A044]/30"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1}
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <p className="mt-4 text-sm text-gray-400">
-                      About Holy Shots
-                    </p>
-                  </div>
+                <div className="w-full h-full flex items-center justify-center p-8">
+                  <svg viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full max-w-[280px]">
+                    {/* Decorative circles */}
+                    <circle cx="150" cy="190" r="140" fill="#C5A044" opacity="0.06"/>
+                    <circle cx="150" cy="190" r="100" fill="#C5A044" opacity="0.08"/>
+
+                    {/* Camera body */}
+                    <rect x="75" y="140" width="150" height="105" rx="18" fill="url(#aboutBodyGrad)"/>
+                    <rect x="75" y="140" width="150" height="5" rx="2" fill="#E8D48B" opacity="0.5"/>
+
+                    {/* Viewfinder */}
+                    <rect x="120" y="118" width="60" height="28" rx="10" fill="#A6852E"/>
+
+                    {/* Shutter button */}
+                    <circle cx="165" cy="128" r="8" fill="#E8D48B"/>
+                    <circle cx="165" cy="128" r="5" fill="white" opacity="0.4"/>
+
+                    {/* Halo */}
+                    <path d="M115 115 C115 90, 185 90, 185 115" stroke="#E8D48B" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8"/>
+
+                    {/* Lens outer */}
+                    <circle cx="150" cy="195" r="40" fill="none" stroke="#E8D48B" stroke-width="4"/>
+                    {/* Lens body */}
+                    <circle cx="150" cy="195" r="35" fill="#0D0D0D"/>
+                    <circle cx="150" cy="195" r="26" fill="none" stroke="#333" stroke-width="0.8"/>
+                    <circle cx="150" cy="195" r="18" fill="none" stroke="#444" stroke-width="0.8"/>
+                    {/* Glass */}
+                    <circle cx="150" cy="195" r="14" fill="#1a1a2e"/>
+                    {/* Reflection */}
+                    <ellipse cx="143" cy="187" rx="6" ry="4" fill="white" opacity="0.2"/>
+
+                    {/* Bottom accent */}
+                    <rect x="120" y="235" width="60" height="4" rx="2" fill="#E8D48B" opacity="0.6"/>
+
+                    {/* Text below camera */}
+                    <text x="150" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="white">Holy Shots</text>
+                    <text x="150" y="312" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#D4B66A">Est. 2024</text>
+
+                    {/* Sparkles */}
+                    <path d="M50 160 L55 170 L50 180 L45 170 Z" fill="#E8D48B" opacity="0.4"/>
+                    <path d="M250 220 L255 230 L250 240 L245 230 Z" fill="#E8D48B" opacity="0.4"/>
+                    <path d="M70 280 L74 288 L70 296 L66 288 Z" fill="#D4B66A" opacity="0.3"/>
+                    <path d="M230 140 L234 148 L230 156 L226 148 Z" fill="#D4B66A" opacity="0.3"/>
+
+                    <defs>
+                      <linearGradient id="aboutBodyGrad" x1="75" y1="140" x2="225" y2="245">
+                        <stop offset="0%" stop-color="#D4B66A"/>
+                        <stop offset="50%" stop-color="#C5A044"/>
+                        <stop offset="100%" stop-color="#A6852E"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
                 </div>
               </motion.div>
               {/* Decorative element */}

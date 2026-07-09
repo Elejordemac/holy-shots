@@ -55,7 +55,7 @@ export default function Equipment() {
                   alt="Canon G7X Mark III"
                   width={600}
                   height={600}
-                  className="object-contain w-full h-full p-4"
+                  className="object-cover w-full h-full"
                 />
               </motion.div>
             </AnimateOnScroll>
