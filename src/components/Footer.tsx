@@ -13,6 +13,16 @@ export default function Footer() {
     }
   };
 
+  const handleSectionClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,42 +52,23 @@ export default function Footer() {
                 Quick Links
               </h4>
               <div className="space-y-2">
-                <Link
-                  href="/#equipment"
-                  className="block text-sm text-gray-300 hover:text-[#C5A044] transition-colors hover:translate-x-1 transform duration-200"
-                >
-                  Equipment
-                </Link>
-                <Link
-                  href="/#about"
-                  className="block text-sm text-gray-300 hover:text-[#C5A044] transition-colors hover:translate-x-1 transform duration-200"
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="/#testimonials"
-                  className="block text-sm text-gray-300 hover:text-[#C5A044] transition-colors hover:translate-x-1 transform duration-200"
-                >
-                  Testimonials
-                </Link>
-                <Link
-                  href="/#faq"
-                  className="block text-sm text-gray-300 hover:text-[#C5A044] transition-colors hover:translate-x-1 transform duration-200"
-                >
-                  FAQ
-                </Link>
-                <Link
-                  href="/#terms"
-                  className="block text-sm text-gray-300 hover:text-[#C5A044] transition-colors hover:translate-x-1 transform duration-200"
-                >
-                  Terms & Conditions
-                </Link>
-                <Link
-                  href="/#contact"
-                  className="block text-sm text-gray-300 hover:text-[#C5A044] transition-colors hover:translate-x-1 transform duration-200"
-                >
-                  Contact
-                </Link>
+                {[
+                  { id: "equipment", label: "Equipment" },
+                  { id: "about", label: "About Us" },
+                  { id: "testimonials", label: "Testimonials" },
+                  { id: "faq", label: "FAQ" },
+                  { id: "terms", label: "Terms & Conditions" },
+                  { id: "contact", label: "Contact" },
+                ].map((link) => (
+                  <Link
+                    key={link.id}
+                    href={`/#${link.id}`}
+                    onClick={(e) => handleSectionClick(e, link.id)}
+                    className="block text-sm text-gray-300 hover:text-[#C5A044] transition-colors hover:translate-x-1 transform duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
             </div>
 
@@ -95,12 +86,14 @@ export default function Footer() {
                 </Link>
                 <Link
                   href="/#equipment"
+                  onClick={(e) => handleSectionClick(e, "equipment")}
                   className="block text-sm text-gray-300 hover:text-[#C5A044] transition-colors hover:translate-x-1 transform duration-200"
                 >
                   View Rates
                 </Link>
                 <Link
                   href="/#contact"
+                  onClick={(e) => handleSectionClick(e, "contact")}
                   className="block text-sm text-gray-300 hover:text-[#C5A044] transition-colors hover:translate-x-1 transform duration-200"
                 >
                   Get Support
