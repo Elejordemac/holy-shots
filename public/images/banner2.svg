@@ -19,37 +19,13 @@
     <circle cx="740" cy="340" r="3" fill="white"/>
   </g>
 
-  <!-- Content centered -->
-  <text x="400" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="3" opacity="0.8">CANON G7X MARK III</text>
+  <!-- Content centered and pushed up -->
+  <text x="400" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="3" opacity="0.8">CANON G7X MARK III</text>
 
-  <text x="400" y="170" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="white">Vlog Like</text>
-  <text x="400" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="white">A Pro</text>
+  <text x="400" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="white">Vlog Like</text>
+  <text x="400" y="210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="white">A Pro</text>
 
-  <text x="400" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="white" opacity="0.85">4K Video • Flip Screen • Compact</text>
+  <text x="400" y="258" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="white" opacity="0.85">4K Video • Flip Screen • Compact</text>
 
-  <text x="400" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700" fill="white">₱600 / day</text>
-
-  <!-- Film strip at bottom -->
-  <g opacity="0.15">
-    <rect x="200" y="370" width="400" height="20" rx="4" fill="white"/>
-    <rect x="210" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="230" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="250" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="270" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="290" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="310" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="330" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="350" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="370" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="390" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="410" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="430" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="450" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="470" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="490" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="510" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="530" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="550" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-    <rect x="570" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
-  </g>
+  <text x="400" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700" fill="white">₱600 / day</text>
 </svg>
