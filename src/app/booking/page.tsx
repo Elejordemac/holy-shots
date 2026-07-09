@@ -509,15 +509,15 @@ export default function BookingPage() {
                 </div>
 
                 {/* QR Code */}
-                <div className="w-64 h-64 mx-auto rounded-2xl overflow-hidden border border-gray-200">
+                <div className="w-64 mx-auto rounded-2xl overflow-hidden border border-gray-200">
                   {paymentMethod === "GCash" && (
-                    <img src="/images/GCASH.jpg" alt="GCash QR Code" className="w-full h-full object-cover" />
+                    <img src="/images/GCASH.jpg" alt="GCash QR Code" className="w-full h-auto" />
                   )}
                   {paymentMethod === "BPI" && (
-                    <img src="/images/BPI.jpg" alt="BPI QR Code" className="w-full h-full object-cover" />
+                    <img src="/images/BPI.jpg" alt="BPI QR Code" className="w-full h-auto" />
                   )}
                   {paymentMethod === "UnionBank" && (
-                    <img src="/images/UNIONBANK.jpg" alt="UnionBank QR Code" className="w-full h-full object-cover" />
+                    <img src="/images/UNIONBANK.jpg" alt="UnionBank QR Code" className="w-full h-auto" />
                   )}
                 </div>
 
