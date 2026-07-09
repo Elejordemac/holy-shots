@@ -53,7 +53,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[85vh] overflow-hidden mt-16">
+    <section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden mt-16 bg-gray-50">
       {/* All banners stacked, only current one is visible via opacity */}
       {banners.map((banner, index) => (
         <motion.div
@@ -71,7 +71,7 @@ export default function Hero() {
             src={banner.image}
             alt={banner.alt}
             fill
-            className="object-cover"
+            className="object-contain sm:object-cover"
             priority={index === 0}
             draggable={false}
           />

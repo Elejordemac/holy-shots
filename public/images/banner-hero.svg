@@ -1,49 +1,40 @@
-<svg viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
+<svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <linearGradient id="heroBg" x1="0" y1="0" x2="1200" y2="500">
+    <linearGradient id="heroBg" x1="0" y1="0" x2="800" y2="400">
       <stop offset="0%" stop-color="#FAFAFA"/>
       <stop offset="100%" stop-color="#F0F0F0"/>
     </linearGradient>
     <radialGradient id="heroGlow" cx="50%" cy="50%">
-      <stop offset="0%" stop-color="#C5A044" stop-opacity="0.08"/>
+      <stop offset="0%" stop-color="#C5A044" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="#FAFAFA" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <rect width="1200" height="500" fill="url(#heroBg)"/>
-  <ellipse cx="600" cy="250" rx="500" ry="300" fill="url(#heroGlow)"/>
-
-  <!-- Dot pattern -->
-  <g opacity="0.06">
-    <circle cx="100" cy="100" r="2" fill="#C5A044"/>
-    <circle cx="160" cy="100" r="2" fill="#C5A044"/>
-    <circle cx="220" cy="100" r="2" fill="#C5A044"/>
-    <circle cx="100" cy="160" r="2" fill="#C5A044"/>
-    <circle cx="160" cy="160" r="2" fill="#C5A044"/>
-    <circle cx="220" cy="160" r="2" fill="#C5A044"/>
-    <circle cx="980" cy="340" r="2" fill="#C5A044"/>
-    <circle cx="1040" cy="340" r="2" fill="#C5A044"/>
-    <circle cx="1100" cy="340" r="2" fill="#C5A044"/>
-    <circle cx="980" cy="400" r="2" fill="#C5A044"/>
-    <circle cx="1040" cy="400" r="2" fill="#C5A044"/>
-    <circle cx="1100" cy="400" r="2" fill="#C5A044"/>
-  </g>
+  <rect width="800" height="400" fill="url(#heroBg)"/>
+  <ellipse cx="400" cy="200" rx="350" ry="200" fill="url(#heroGlow)"/>
 
   <!-- Badge -->
-  <rect x="475" y="100" width="250" height="32" rx="16" fill="none" stroke="#C5A044" stroke-opacity="0.4"/>
-  <text x="600" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#C5A044">Premium Camera Rentals</text>
+  <rect x="290" y="70" width="220" height="28" rx="14" fill="none" stroke="#C5A044" stroke-opacity="0.5"/>
+  <text x="400" y="89" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#C5A044">Premium Camera Rentals</text>
 
   <!-- Main heading -->
-  <text x="600" y="210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="#171717" letter-spacing="-1">Capture Your</text>
-  <text x="600" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="#C5A044" letter-spacing="-1">Holy Shot</text>
+  <text x="400" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="#171717">Capture Your</text>
+  <text x="400" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="#C5A044">Holy Shot</text>
 
   <!-- Subtext -->
-  <text x="600" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#737373">Rent premium cameras for your creative projects.</text>
-  <text x="600" y="375" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#737373">Professional equipment, affordable rates, hassle-free experience.</text>
+  <text x="400" y="265" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#737373">Rent premium cameras for your creative projects.</text>
+  <text x="400" y="288" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#737373">Professional equipment, affordable rates.</text>
 
-  <!-- Sparkle decorations -->
-  <path d="M180 250 L188 265 L180 280 L172 265 Z" fill="#C5A044" opacity="0.3"/>
-  <path d="M1020 200 L1028 215 L1020 230 L1012 215 Z" fill="#C5A044" opacity="0.3"/>
-  <path d="M250 380 L256 392 L250 404 L244 392 Z" fill="#D4B66A" opacity="0.2"/>
-  <path d="M950 120 L956 132 L950 144 L944 132 Z" fill="#D4B66A" opacity="0.2"/>
+  <!-- Stats -->
+  <text x="280" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#171717">₱600</text>
+  <text x="280" y="365" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#737373">Per Day</text>
+
+  <text x="400" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#171717">₱800</text>
+  <text x="400" y="365" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#737373">Weekdays</text>
+
+  <text x="520" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#171717">24/7</text>
+  <text x="520" y="365" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#737373">Support</text>
+
+  <!-- Sparkles -->
+  <path d="M150 150 L155 160 L150 170 L145 160 Z" fill="#C5A044" opacity="0.25"/>
+  <path d="M650 130 L655 140 L650 150 L645 140 Z" fill="#C5A044" opacity="0.25"/>
 </svg>

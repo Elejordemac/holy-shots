@@ -1,58 +1,55 @@
-<svg viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
+<svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="500">
+    <linearGradient id="bg2" x1="0" y1="0" x2="800" y2="400">
       <stop offset="0%" stop-color="#C5A044"/>
       <stop offset="50%" stop-color="#D4B66A"/>
       <stop offset="100%" stop-color="#A6852E"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="500" fill="url(#bg2)"/>
-  
+  <rect width="800" height="400" fill="url(#bg2)"/>
+
   <!-- Pattern dots -->
   <g opacity="0.2">
-    <circle cx="50" cy="50" r="4" fill="white"/>
-    <circle cx="150" cy="50" r="4" fill="white"/>
-    <circle cx="250" cy="50" r="4" fill="white"/>
-    <circle cx="50" cy="150" r="4" fill="white"/>
-    <circle cx="150" cy="150" r="4" fill="white"/>
-    <circle cx="1050" cy="350" r="4" fill="white"/>
-    <circle cx="1150" cy="350" r="4" fill="white"/>
-    <circle cx="1050" cy="450" r="4" fill="white"/>
-    <circle cx="1150" cy="450" r="4" fill="white"/>
+    <circle cx="60" cy="60" r="3" fill="white"/>
+    <circle cx="100" cy="60" r="3" fill="white"/>
+    <circle cx="60" cy="100" r="3" fill="white"/>
+    <circle cx="700" cy="300" r="3" fill="white"/>
+    <circle cx="740" cy="300" r="3" fill="white"/>
+    <circle cx="700" cy="340" r="3" fill="white"/>
+    <circle cx="740" cy="340" r="3" fill="white"/>
   </g>
 
-  <!-- Content card -->
-  <rect x="150" y="80" width="420" height="340" rx="20" fill="white" opacity="0.95"/>
-  
-  <!-- Text on card -->
-  <text x="360" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#C5A044" letter-spacing="3">CANON G7X MARK III</text>
-  <text x="360" y="220" text-anchor="middle" font-family="system-ui, sans-serif" font-size="42" font-weight="800" fill="#1a1a2e">Vlog Like</text>
-  <text x="360" y="275" text-anchor="middle" font-family="system-ui, sans-serif" font-size="42" font-weight="800" fill="#1a1a2e">A Pro</text>
-  <text x="360" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#666">4K Video • Flip Screen • Compact</text>
-  
-  <!-- Price -->
-  <text x="360" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#C5A044">₱600 / day</text>
-  
-  <!-- Camera illustration on right -->
-  <rect x="680" y="100" width="380" height="300" rx="25" fill="white" opacity="0.12"/>
-  <rect x="720" y="130" width="300" height="200" rx="20" fill="white" opacity="0.15"/>
-  <circle cx="870" cy="230" r="70" fill="white" opacity="0.2"/>
-  <circle cx="870" cy="230" r="50" fill="white" opacity="0.12"/>
-  <circle cx="870" cy="230" r="30" fill="white" opacity="0.25"/>
+  <!-- Content centered -->
+  <text x="400" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="3" opacity="0.8">CANON G7X MARK III</text>
 
-  <!-- Film strip decoration -->
-  <rect x="650" y="430" width="460" height="35" rx="5" fill="white" opacity="0.12"/>
-  <rect x="670" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="705" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="740" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="775" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="810" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="845" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="880" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="915" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="950" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="985" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="1020" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
-  <rect x="1055" y="435" width="25" height="25" rx="3" fill="white" opacity="0.15"/>
+  <text x="400" y="170" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="white">Vlog Like</text>
+  <text x="400" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="white">A Pro</text>
+
+  <text x="400" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="white" opacity="0.85">4K Video • Flip Screen • Compact</text>
+
+  <text x="400" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700" fill="white">₱600 / day</text>
+
+  <!-- Film strip at bottom -->
+  <g opacity="0.15">
+    <rect x="200" y="370" width="400" height="20" rx="4" fill="white"/>
+    <rect x="210" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="230" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="250" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="270" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="290" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="310" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="330" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="350" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="370" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="390" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="410" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="430" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="450" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="470" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="490" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="510" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="530" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="550" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+    <rect x="570" y="373" width="14" height="14" rx="2" fill="white" opacity="0.5"/>
+  </g>
 </svg>
