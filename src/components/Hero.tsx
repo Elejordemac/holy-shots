@@ -31,7 +31,7 @@ export default function Hero() {
     if (intervalRef.current) clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % banners.length);
-    }, 4000);
+    }, 3000);
   }, []);
 
   useEffect(() => {
