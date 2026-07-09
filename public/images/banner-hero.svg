@@ -1,0 +1,60 @@
+<svg viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="heroBg" x1="0" y1="0" x2="1200" y2="500">
+      <stop offset="0%" stop-color="#FAFAFA"/>
+      <stop offset="100%" stop-color="#F0F0F0"/>
+    </linearGradient>
+    <radialGradient id="heroGlow" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#C5A044" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FAFAFA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="500" fill="url(#heroBg)"/>
+  <ellipse cx="600" cy="250" rx="500" ry="300" fill="url(#heroGlow)"/>
+
+  <!-- Dot pattern -->
+  <g opacity="0.06">
+    <circle cx="100" cy="100" r="2" fill="#C5A044"/>
+    <circle cx="160" cy="100" r="2" fill="#C5A044"/>
+    <circle cx="220" cy="100" r="2" fill="#C5A044"/>
+    <circle cx="100" cy="160" r="2" fill="#C5A044"/>
+    <circle cx="160" cy="160" r="2" fill="#C5A044"/>
+    <circle cx="220" cy="160" r="2" fill="#C5A044"/>
+    <circle cx="980" cy="340" r="2" fill="#C5A044"/>
+    <circle cx="1040" cy="340" r="2" fill="#C5A044"/>
+    <circle cx="1100" cy="340" r="2" fill="#C5A044"/>
+    <circle cx="980" cy="400" r="2" fill="#C5A044"/>
+    <circle cx="1040" cy="400" r="2" fill="#C5A044"/>
+    <circle cx="1100" cy="400" r="2" fill="#C5A044"/>
+  </g>
+
+  <!-- Badge -->
+  <rect x="475" y="80" width="250" height="32" rx="16" fill="none" stroke="#C5A044" stroke-opacity="0.4"/>
+  <text x="600" y="102" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#C5A044">Premium Camera Rentals</text>
+
+  <!-- Main heading -->
+  <text x="600" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="56" font-weight="800" fill="#171717" letter-spacing="-1">Capture Your</text>
+  <text x="600" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="56" font-weight="800" fill="#C5A044" letter-spacing="-1">Holy Shot</text>
+
+  <!-- Subtext -->
+  <text x="600" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#737373">Rent premium cameras for your creative projects.</text>
+  <text x="600" y="326" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#737373">Professional equipment, affordable rates, hassle-free experience.</text>
+
+  <!-- CTA Buttons -->
+  <rect x="380" y="355" width="200" height="48" rx="24" fill="#C5A044"/>
+  <text x="480" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="white">Reserve Equipment</text>
+
+  <rect x="610" y="355" width="200" height="48" rx="24" fill="none" stroke="#D4D4D4" stroke-width="1.5"/>
+  <text x="710" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#404040">View Equipment</text>
+
+  <!-- Stats -->
+  <text x="440" y="445" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#171717">₱600</text>
+  <text x="440" y="468" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#737373">Per Day</text>
+
+  <text x="600" y="445" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#171717">₱800</text>
+  <text x="600" y="468" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#737373">Weekdays</text>
+
+  <text x="760" y="445" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#171717">24/7</text>
+  <text x="760" y="468" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#737373">Support</text>
+</svg>
