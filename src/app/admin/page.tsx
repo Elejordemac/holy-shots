@@ -67,12 +67,25 @@ type Tab = "dashboard" | "bookings" | "messages" | "equipment" | "blacklist" | "
 function calculateDays(pickup: string, returnDate: string): number {
   const start = new Date(pickup);
   const end = new Date(returnDate);
-  const diff = Math.ceil((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
+  const diff = Math.ceil((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)) + 1;
   return diff > 0 ? diff : 1;
 }
 
-function calculateTotal(pickup: string, returnDate: string, dailyRate: number): number {
-  return calculateDays(pickup, returnDate) * dailyRate;
+function calculateTotal(pickup: string, returnDate: string, dailyRate: number, weekdayRate: number): number {
+  const start = new Date(pickup);
+  const end = new Date(returnDate);
+  let total = 0;
+  const current = new Date(start);
+  while (current <= end) {
+    const day = current.getDay(); // 0=Sun, 6=Sat
+    if (day === 0 || day === 6) {
+      total += dailyRate; // weekend rate
+    } else {
+      total += weekdayRate; // weekday rate
+    }
+    current.setDate(current.getDate() + 1);
+  }
+  return total;
 }
 
 function getStatusMessage(status: string, name: string, equipment: string, pickup: string, returnDate: string): string {
@@ -93,7 +106,12 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [confirmModal, setConfirmModal] = useState<{ show: boolean; action: () => void; message: string }>({ show: false, action: () => {}, message: "" });
   const router = useRouter();
+
+  const showConfirm = (message: string, action: () => void) => {
+    setConfirmModal({ show: true, message, action });
+  };
 
   const fetchData = useCallback(async () => {
     const [bookingsRes, messagesRes, equipmentRes, blacklistRes] = await Promise.all([
@@ -193,7 +211,7 @@ export default function AdminDashboard() {
     const rows = bookings.map(b => {
       const days = calculateDays(b.pickup_date, b.return_date);
       const eq = equipment.find(e => e.name === b.equipment);
-      const total = eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate) : b.total_amount || 0;
+      const total = eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate, eq.weekday_rate) : b.total_amount || 0;
       return [b.name, b.email, b.phone, b.instagram, b.equipment, b.pickup_date, b.return_date, days, b.status, b.payment_method, total];
     });
     const csv = [headers, ...rows].map(r => r.join(",")).join("\n");
@@ -217,7 +235,7 @@ export default function AdminDashboard() {
   });
   const totalRevenue = bookings.filter(b => b.status === "completed").reduce((acc, b) => {
     const eq = equipment.find(e => e.name === b.equipment);
-    const total = eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate) : (b.total_amount || 0);
+    const total = eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate, eq.weekday_rate) : (b.total_amount || 0);
     return acc + total;
   }, 0);
 
@@ -233,7 +251,7 @@ export default function AdminDashboard() {
       totalBookings: customerBookings.length,
       totalSpent: customerBookings.reduce((acc, b) => {
         const eq = equipment.find(e => e.name === b.equipment);
-        return acc + (eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate) : 0);
+        return acc + (eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate, eq.weekday_rate) : 0);
       }, 0),
       bookings: customerBookings,
     };
@@ -352,7 +370,7 @@ export default function AdminDashboard() {
                 <div className="divide-y divide-gray-700">
                   {bookings.slice(0, 5).map(b => {
                     const eq = equipment.find(e => e.name === b.equipment);
-                    const total = eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate) : 0;
+                    const total = eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate, eq.weekday_rate) : 0;
                     return (
                       <div key={b.id} className="px-4 py-3 flex items-center justify-between">
                         <div>
@@ -375,7 +393,7 @@ export default function AdminDashboard() {
               {bookings.map(b => {
                 const eq = equipment.find(e => e.name === b.equipment);
                 const days = calculateDays(b.pickup_date, b.return_date);
-                const total = eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate) : 0;
+                const total = eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate, eq.weekday_rate) : 0;
                 return (
                   <div key={b.id} className="bg-gray-800 rounded-xl border border-gray-700 p-4 sm:p-5">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
@@ -399,11 +417,11 @@ export default function AdminDashboard() {
                     </div>
                     {copiedId === b.id && <p className="text-green-400 text-xs mb-2">✓ Email notification sent to {b.email}</p>}
                     <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-700">
-                      {b.status !== "confirmed" && <button onClick={() => updateBookingStatus(b.id, "confirmed")} className="px-3 py-1.5 bg-blue-500/20 text-blue-400 text-xs rounded-lg hover:bg-blue-500/30">✓ Confirm</button>}
-                      {b.status !== "completed" && <button onClick={() => updateBookingStatus(b.id, "completed")} className="px-3 py-1.5 bg-green-500/20 text-green-400 text-xs rounded-lg hover:bg-green-500/30">✓ Complete</button>}
-                      {b.status !== "declined" && <button onClick={() => updateBookingStatus(b.id, "declined")} className="px-3 py-1.5 bg-red-500/20 text-red-400 text-xs rounded-lg hover:bg-red-500/30">✗ Decline</button>}
-                      <button onClick={() => deleteBooking(b.id)} className="px-3 py-1.5 bg-gray-700 text-gray-400 text-xs rounded-lg hover:bg-gray-600">🗑 Delete</button>
-                      <button onClick={() => addToBlacklist(b.name, b.email, b.phone, b.instagram, "Added from booking")} className="px-3 py-1.5 bg-gray-700 text-gray-400 text-xs rounded-lg hover:bg-gray-600">🚫 Blacklist</button>
+                      {b.status !== "confirmed" && <button onClick={() => showConfirm(`Confirm booking for ${b.name}?`, () => updateBookingStatus(b.id, "confirmed"))} className="px-3 py-1.5 bg-blue-500/20 text-blue-400 text-xs rounded-lg hover:bg-blue-500/30">✓ Confirm</button>}
+                      {b.status !== "completed" && <button onClick={() => showConfirm(`Mark ${b.name}'s booking as completed?`, () => updateBookingStatus(b.id, "completed"))} className="px-3 py-1.5 bg-green-500/20 text-green-400 text-xs rounded-lg hover:bg-green-500/30">✓ Complete</button>}
+                      {b.status !== "declined" && <button onClick={() => showConfirm(`Decline booking for ${b.name}? They will be notified.`, () => updateBookingStatus(b.id, "declined"))} className="px-3 py-1.5 bg-red-500/20 text-red-400 text-xs rounded-lg hover:bg-red-500/30">✗ Decline</button>}
+                      <button onClick={() => showConfirm(`Delete ${b.name}'s booking? This cannot be undone.`, () => deleteBooking(b.id))} className="px-3 py-1.5 bg-gray-700 text-gray-400 text-xs rounded-lg hover:bg-gray-600">🗑 Delete</button>
+                      <button onClick={() => showConfirm(`Add ${b.name} to blacklist?`, () => addToBlacklist(b.name, b.email, b.phone, b.instagram, "Added from booking"))} className="px-3 py-1.5 bg-gray-700 text-gray-400 text-xs rounded-lg hover:bg-gray-600">🚫 Blacklist</button>
                     </div>
                   </div>
                 );
@@ -459,7 +477,7 @@ export default function AdminDashboard() {
                   <div className="space-y-2 mt-3 pt-3 border-t border-gray-700">
                     {c.bookings.map(b => {
                       const eq = equipment.find(e => e.name === b.equipment);
-                      const total = eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate) : 0;
+                      const total = eq ? calculateTotal(b.pickup_date, b.return_date, eq.daily_rate, eq.weekday_rate) : 0;
                       return (
                         <div key={b.id} className="flex items-center justify-between text-sm">
                           <div className="flex items-center gap-2">
@@ -540,6 +558,30 @@ export default function AdminDashboard() {
           )}
         </div>
       </main>
+
+      {/* Confirmation Modal */}
+      {confirmModal.show && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+          <div className="bg-gray-800 rounded-2xl border border-gray-700 p-6 max-w-sm w-full shadow-2xl">
+            <h3 className="text-white font-semibold text-lg mb-2">Confirm Action</h3>
+            <p className="text-gray-400 text-sm mb-6">{confirmModal.message}</p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setConfirmModal({ show: false, action: () => {}, message: "" })}
+                className="flex-1 px-4 py-2.5 bg-gray-700 text-gray-300 text-sm font-medium rounded-xl hover:bg-gray-600 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => { confirmModal.action(); setConfirmModal({ show: false, action: () => {}, message: "" }); }}
+                className="flex-1 px-4 py-2.5 bg-[#C5A044] text-white text-sm font-medium rounded-xl hover:bg-[#A6852E] transition-colors"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
