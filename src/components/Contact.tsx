@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import { supabase } from "@/lib/supabase";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const EMAILJS_SERVICE_ID = "service_pfqc3iv";
@@ -32,6 +33,13 @@ export default function Contact() {
         },
         EMAILJS_PUBLIC_KEY
       );
+
+      // Also save to database
+      await supabase.from("messages").insert({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      });
 
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 3000);

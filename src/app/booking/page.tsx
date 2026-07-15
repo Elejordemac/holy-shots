@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
+import { supabase } from "@/lib/supabase";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -107,6 +108,23 @@ export default function BookingPage() {
           templateParams,
           EMAILJS_PUBLIC_KEY
         );
+
+        // Save to database
+        await supabase.from("bookings").insert({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          instagram: formData.instagram,
+          equipment: selectedEquipment?.name || "",
+          pickup_date: formData.startDate,
+          return_date: formData.endDate,
+          purpose: formData.purpose || null,
+          id_type: formData.idType,
+          id_photo_url: idPhotoUrl,
+          payment_method: paymentMethod,
+          receipt_url: receiptUrl,
+          status: "pending",
+        });
 
         setSubmitted(true);
       } catch {
