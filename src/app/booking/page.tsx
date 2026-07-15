@@ -88,6 +88,7 @@ export default function BookingPage() {
         }
 
         const templateParams: Record<string, unknown> = {
+          to_email: "markrheyelejorde@gmail.com",
           name: formData.name,
           email: formData.email,
           phone: formData.phone,

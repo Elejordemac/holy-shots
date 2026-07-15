@@ -2,8 +2,13 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import emailjs from "@emailjs/browser";
 import { supabase } from "@/lib/supabase";
 import Logo from "@/components/Logo";
+
+const EMAILJS_SERVICE_ID = "service_pfqc3iv";
+const EMAILJS_TEMPLATE_ID = "template_0a7oqqs";
+const EMAILJS_PUBLIC_KEY = "vpDTwVtZMtxoj-JpX";
 
 type Booking = {
   id: string;
@@ -122,12 +127,39 @@ export default function AdminDashboard() {
     await supabase.from("bookings").update({ status }).eq("id", id);
     const booking = bookings.find(b => b.id === id);
     setBookings(bookings.map(b => b.id === id ? { ...b, status } : b));
-    // Copy notification message
+    // Send email notification to client
     if (booking) {
-      const msg = getStatusMessage(status, booking.name, booking.equipment, booking.pickup_date, booking.return_date);
-      navigator.clipboard.writeText(msg);
-      setCopiedId(id);
-      setTimeout(() => setCopiedId(null), 3000);
+      const statusMessages: Record<string, string> = {
+        confirmed: "Your booking has been CONFIRMED! Please prepare your valid ID for pickup. See you!",
+        declined: "We're sorry, your booking has been DECLINED. Please contact us on Instagram for more details.",
+        completed: "Your rental has been marked as COMPLETED. Thank you for choosing Holy Shots! We hope to see you again.",
+      };
+      try {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            to_email: booking.email,
+            name: booking.name,
+            email: booking.email,
+            phone: booking.phone || "N/A",
+            instagram: booking.instagram || "N/A",
+            equipment: booking.equipment,
+            pickup_date: booking.pickup_date,
+            return_date: booking.return_date,
+            purpose: statusMessages[status] || `Status updated to: ${status}`,
+            id_type: "N/A",
+            payment_method: booking.payment_method || "N/A",
+            id_photo: "N/A",
+            receipt: "N/A",
+          },
+          EMAILJS_PUBLIC_KEY
+        );
+        setCopiedId(id);
+        setTimeout(() => setCopiedId(null), 3000);
+      } catch {
+        // Email failed silently
+      }
     }
   };
 
@@ -365,7 +397,7 @@ export default function AdminDashboard() {
                       {b.id_photo_url && b.id_photo_url !== "Not uploaded" && <a href={b.id_photo_url} target="_blank" rel="noopener noreferrer" className="px-3 py-1 bg-gray-700 text-gray-300 text-xs rounded-lg hover:bg-gray-600">📎 View ID</a>}
                       {b.receipt_url && b.receipt_url !== "Not uploaded" && <a href={b.receipt_url} target="_blank" rel="noopener noreferrer" className="px-3 py-1 bg-gray-700 text-gray-300 text-xs rounded-lg hover:bg-gray-600">📎 View Receipt</a>}
                     </div>
-                    {copiedId === b.id && <p className="text-green-400 text-xs mb-2">✓ Status message copied to clipboard — paste it to DM/text the client</p>}
+                    {copiedId === b.id && <p className="text-green-400 text-xs mb-2">✓ Email notification sent to {b.email}</p>}
                     <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-700">
                       {b.status !== "confirmed" && <button onClick={() => updateBookingStatus(b.id, "confirmed")} className="px-3 py-1.5 bg-blue-500/20 text-blue-400 text-xs rounded-lg hover:bg-blue-500/30">✓ Confirm</button>}
                       {b.status !== "completed" && <button onClick={() => updateBookingStatus(b.id, "completed")} className="px-3 py-1.5 bg-green-500/20 text-green-400 text-xs rounded-lg hover:bg-green-500/30">✓ Complete</button>}
